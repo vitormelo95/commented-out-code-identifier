@@ -47,6 +47,7 @@ Exatas \par Departamento de Ciência da Computação}
 
 \chapter{INTRODUÇÃO}
 
+
 À medida que a Ciência da Computação avança e milhões de linhas de códigos são 
 escritas, diariamente e em diversas linguagens de programação, os desenvolvedores 
 percebem que, para alcançar sucesso a médio e longo prazo em seus projetos, é
@@ -55,16 +56,24 @@ programação.
 
 Uma prática de programação muito comum ao se desenvolver softwares é a de 
 ''remover'' uma linha ou um bloco de código tornando-os comentários, sendo conhecida  
-como commented-out code. Comentar uma linha de código pode ser útil, tanto que 
+como commented-out code (Figura \ref{fig:commentExample}). Comentar uma linha de código pode ser útil, tanto que 
 os próprios ambientes de programação (IDE's e editores de texto) oferecem atalhos 
 fáceis para isso. Contudo, esta prática se torna um verdadeiro problema quando 
 estes códigos comentados estão inseridos em um sistema grande, complexo e
 mantido por diversas pessoas.
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=2.4in,width=6.3in]{images/gcc06.png}
+  \caption{Commented-out code example }
+  \label{fig:commentExample}
+\end{figure}
+
+
 A inserção de código comentado nos arquivos fontes de um sistema pode causar
 redução da legibilidade, distração e perda de tempo. Martin, em seu livro clássico
-Clean Code, enfatiza \textit{"Few practices are as odious as commenting-out code. 
-Don’t do this!"}, ele argumenta que outras pessoas não terão coragem de deletar 
+Clean Code, enfatiza \cite[Few practices are as odious as commenting-out code. 
+Don’t do this!]{cleanCode}, ele argumenta que outras pessoas não terão coragem de deletar 
 este código por achar que ele pode ser importante. 
 
 Além disso, quando um mantenedor se depara com códigos comentados ele pode ter uma 
@@ -83,26 +92,54 @@ disso, fazer um estudo abrangente dessa prática em repositórios de código abe
 \chapter{REFERENCIAL TEÓRICO}
 
 
-\section{Commented-out code}
+\section{Trabalhos Anteriores}
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[height=2.4in,width=6.3in]{images/gcc06.png}
-  \caption{Commented-out code example}
-  \label{fig:commentExample}
-\end{figure}
+Lucas Grijó e André Hora exploraram o problema da inserção de código comentado 
+e demostraram interessantes resultados no artigo Minerando Código Comentado 
+\cite{articleMiningComments}. No trabalho foi desenvolvido um parser heurístico
+que identifica commented-out code para a linguagem java que obteve
+teve uma precisão de 83\%. Com esta ferramenta foi identificado que alguns 
+sistemas possuem em média 4,17\% de taxa de commented-out code em relação
+ao total de comentários, com alguns sistemas chegando a 30\%.
+
+Neste trabalho é proposto uma metodologia multi-linguagem baseada em técnicas de
+aprendizado de máquina. Tem se a ambição de superar a precisão da ferramenta
+desenvolvida no trabalho anterior, possibilitando a validação dos resultados 
+encontrados no outro trabalho e generaliza-lo para diversas linguagens.
+
 
 \section{Mineração de Repositórios de Software}
 
-\section{Aprendizado de Máquina}
+Para se entender as práticas e diversas informações sobre um sistema pode-se
+analisar as diferentes versões do código deste sistema. Dessa forma pode-se 
+identificar em um sistema as boas e más práticas presentes, questões arquiteturais,
+entre outros. Com o objetivo de melhorar a manutenibilidade deste sistema. 
+
+Alguns exemplos do que é possível identificar com a mineração de repositórios de 
+software são: \cite[Predict which sections of code have the most defects and the 
+steepest learning curves; Use software evolution to find the code segment that 
+matters most for maintenance; Understand how multiple developers and teams 
+influence code quality; etc.]{crimeScene}.
+
+\section{Git e GitHub}
+
+Git é uma ferramenta amplamente usada na comunidade de desenvolvimento de 
+software para controle de versão de código. Ela permite que seja avaliado
+diferentes versões do código de um mesmo sistema. O Github é uma plataforma
+que permite hospedar repositórios de código com o sistema de versionamento
+Git na nuvem. Nele é possível encontrar diversos repositórios de código aberto 
+que serão as fontes de estudo deste trabalho. 
 
 \section{Algoritmos de Classificação}
+Os algoritmos de classificação são algoritmos de aprendizado supervisionado,
+no qual utilizamos uma base de treino em que previamente sabemos a "classe" 
+de cada objeto para treinar um modelo que pode dizer qual a classe dos 
+objetos em que não a conhecemos \cite{patternClassification}.
 
-\section{Trabalhos Anteriores}
-
-(no trabalho anterior foi obtido um índice de acerto de 85\% com parses
-heurísticos para a linguagem java, portanto, essa é uma taxa que esperamos
-superar neste trabalho)
+Podemos montar o problema de identificar commented-out code como um problema
+de classificação. Neste caso os objetos serão os comentários presentes em 
+códigos de diversas linguagens, e a classe será se aquele comentário é "normal"
+ou código comentado.
 
 \chapter{METODOLOGIA}
 
@@ -110,20 +147,23 @@ superar neste trabalho)
 
 Deverá ser extraído de diferentes repositórios de software todos os tipos
 de comentários. Em sequência estes comentários devem ser classificados 
-manualmente como commented-out code (1) ou comentário normal (0) a fim de se formar 
-uma base de treinamento. Esta base deverá contemplar diferentes tipos
+como commented-out code (1) ou comentário normal (0) a fim de se formar 
+a base de treinamento. Esta base deverá contemplar diferentes tipos
 de linguagem para que o classificador consiga identificar códigos
-comentados independente de linguagem. Dessa forma teremos uma base de dados em que o X será igual a uma linha de
-comentário e o Y igual a 0 se for um comentário normal ou 1 se for um 
-código comentado, que servirão, respectivamente, como input e output para 
-o treinamento do classificador.
+comentados independente de linguagem. Dessa forma teremos uma base de dados em que o 
+X será igual a uma linha de comentário e o Y igual a 0 se for um comentário 
+normal ou 1 se for um código comentado, que servirão, respectivamente, como input 
+e output para o treinamento do classificador.
 
 \section{Treinamento de Modelos de Classificação}
 
 Nesta etapa selecionaremos uma variedade de modelos/algoritmos de classificação,
 como por exemplo redes neurais multi-layer perceptron, LSTM, etc. com o 
-objetivo de encontrar um classificador com alto índice de precisão 
-. Para compararmos os classificadores será 
+objetivo de encontrar um classificador com alto índice de precisão. 
+Os modelos de classificação normalmente utilizam como input números, 
+então uma etapa importante é a representação do texto de comentário como números.
+Pretende-se usar uma representação categórica baseada nos caracteres, que será
+melhor definida no trabalho. Para compararmos os classificadores será 
 computado os índices de precisão (True Positive Rate) e revocação
 (False Positive Rate) de cada modelo.
 
@@ -149,6 +189,8 @@ espera-se compreender como a má prática de remover código através de
 comentário afeta a evolução dos diferentes repositórios de código aberto.
 
 \chapter{ETAPAS E CRONOGRAMAS}
+
+
 
 \bibliography{references.bib}
 
