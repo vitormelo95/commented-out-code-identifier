@@ -5,3 +5,7 @@
 *.fdb_latexmk
 *.fls
 *.gz
+/scrapper/repos
+/separated_files
+.vscode/launch.json
+final_data/data.csv
