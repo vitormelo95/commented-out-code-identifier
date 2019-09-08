@@ -40,27 +40,27 @@ class SeparateCode(object):
     split = re.split(regex,code,0, re.MULTILINE)
     comments = ""
     separated_code = ""
-    #print(split)
+    #print(split)pdflatex
     for s in split:
       #print(s)
       if s == None or s == '': continue
-      if s.startswith('/*') or s.startswith('//'):
+      if s.startswith(self.get_one_line_separator()) or s.startswith(self.get_init_line_separator()):
         comments += s + '\n'
       else:
         separated_code += s
     return re.sub(r'//|/\*|\*/|\*','',comments),re.sub(r'//|/\*|\*/','',separated_code)
     
 
-f = open('../scrapper/repos/TypeScript/scripts/tslint/rules/noDoubleSpaceRule.ts','r')
-separator = SeparateCode(f.read(), 'js') 
+#f = open('../scrapper/repos/TypeScript/scripts/tslint/rules/noDoubleSpaceRule.ts','r')
+#separator = SeparateCode(f.read(), 'js') 
 
 
-print(separator.identify_comments())
+#print(separator.identify_comments())
 
 import os
 path = "../scrapper/repos/"
 
-LANGUAGES = ['.java','.c','.cpp','.py','.js','.ts']
+LANGUAGES = ['.java','.c','.cpp','.js','.ts','.py','.php', '.cs']
 
 def separate_all():
   for root,d_names,f_names in os.walk(path):

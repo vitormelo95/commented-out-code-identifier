@@ -35,8 +35,8 @@ def combine_all_files():
       
 
   for root,d_names,f_names in os.walk(path+'/code'):
-    lang = get_language(f_name)
     for f_name in f_names:
+      lang = get_language(f_name)
       f = open(root+'/'+f_name,'rb')
       for line in f:
         if len(line) > 3:
