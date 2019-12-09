@@ -8,20 +8,20 @@ SEARCH_PARAMS = {
   'pushed': '>=2019-04-01',
   'created': '<=2017-04-01',
   'languages': [
-    #'JAVASCRIPT',
-    #'JAVA',
+    'JAVASCRIPT',
+    'JAVA',
     #'PYTHON',
-    'PHP',
-    'C++',
-    'C#',
+    #'PHP',
+    #'C++',
+    #'C#',
     'TYPESCRIPT',
     #'SHELL',
     'C',
-    'RUBY',
-    'GO',
-    'SWIFT',
-    'SCALA',
-    'OBJECTIVE-C'
+    #'RUBY',
+    #'GO',
+    #'SWIFT',
+    #'SCALA',
+    #'OBJECTIVE-C'
   ]
 }
 
@@ -41,18 +41,15 @@ def search_repositories():
     clone_repositories(reps)
   
 def clone_repositories(reps):
-  
   if 'items' in reps:
-  
-    for rep in reps['items'][:10]:
+    for rep in reps['items'][:50]:
       print(rep['full_name'])
-      if not os.path.isdir('repos/'+rep['name'])  :
+      if not os.path.isdir('repos/'+rep['name']) and not os.path.isdir('repos2/'+rep['name']):
         try:
-          Git('repos').clone(rep['git_url'])
+          Git('repos2').clone(rep['git_url'])
         except Exception as e:
           print(e)
       
-
 
 if __name__ == '__main__':
     search_repositories()

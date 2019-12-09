@@ -1,0 +1,3126 @@
+${sentryKey}@sentry.io/${sentryId}`).install() - 1
+await fetch(systemAPIEndpoint, { - 1
+Networking & URLs - 1
+console.graph.cool/token/?token=${token}${projectName ? `&redirect=/${encodeURIComponent(projectName)}` : ''}` - 1
+${projectFileContent.replace(/\r?\n/g, '\n      ')} - 1
+api.graph.cool/relay/v1/${projectId}\n` - 1
+Terminal output: export - 1
+export function onError(e: Error, reportToSentry: boolean = true) { - 1
+if (reportToSentry) { - 1
+Raven.captureException(e) - 1
+const errorMessage = `Error: ${e.message}` - 1
+if (e.stack && !e.stack.startsWith(errorMessage!)) { - 1
+console.error(`${chalk.red(figures.cross)}  Error: ${errorMessage}\n`) - 1
+debug(e.stack) - 1
+} else { - 1
+const errorLines = e.stack!.split('\n') - 1
+const firstErrorLine = errorLines[0] - 1
+console.error(`${chalk.red(figures.cross)}  ${firstErrorLine}`) - 1
+debug(e.stack) - 1
+console.error(`\n${setDebugMessage}\n${contactUsInSlackMessage}`) - 1
+process.exit(1) - 1
+export const playgroundURL = (token: string, projectName: string) => - 1
+continue - 1
+g, - 1
+github.com/${repoName}/tree/master/${ - 1
+this.out.log( - 1
+`   ${chalk.green(figures.tick)} You now can run ${chalk.bold( - 1
+'graphcool deploy', - 1
+)} to deploy changes`, - 1
+github.com/${ - 1
+if (template) { - 1
+const projectDefinition = examples[template] - 1
+if (!projectDefinition) { - 1
+this.out.error(`${template} is not a valid template`) - 1
+this.definition.set(projectDefinition) - 1
+const newDefinition = await this.interactiveInit() - 1
+value: 'example', - 1
+name: [ - 1
+`${chalk.bold('Based on example')}`, - 1
+`  Creates a new Graphcool service based on an example`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+'-t', - 1
+'blank', - 1
+localfaas:${FUNCTIONS_PORT}`, - 1
+${this.hostName}:${FUNCTIONS_PORT}`, - 1
+localhost:${customVars.PORT}`, - 1
+localhost:${customVars.FUNCTIONS_PORT}`, - 1
+const isWin = true - 1
+${hostName}:${PORT}` - 1
+${hostName}:${FUNCTIONS_PORT}` - 1
+await this.auth.ensureAuth() - 1
+?endpoint=${this.env.simpleEndpoint( - 1
+static command = 'local' - 1
+continue - 1
+console.graph.cool/${encodeURIComponent(info.name)}/settings/general`) - 1
+async getFileNames() { - 1
+return globby(['.js', '.ts', '!node_modules', '!node_modules'], {cwd: this.buildDir}) - 1
+const fileNames = await this.getFileNames() - 1
+function infinite() { - 1
+setTimeout(infinite, 100000) - 1
+infinite() - 1
+const styleLog = (l: string) => { - 1
+const logs = this.lambdaToArray(l) - 1
+let potentialJson = l.slice(62).trim() - 1
+try { - 1
+potentialJson = JSON.parse(potentialJson) - 1
+} catch (e) { - 1
+return { - 1
+[l.slice(0, 24)]: potentialJson, - 1
+if (json.logs) { - 1
+json.logs = flatMap(json.logs.map(this.lambdaToArray)).map(styleLog) - 1
+TODO: command (cmd: Class<Command<>>): string { - 1
+TODO: commandLine (cmd: Class<Command<>>): [string, ?string] { - 1
+TODO renderFlags (flags: [string, Flag][]): string { - 1
+if (process.env.NODE_ENV === 'test') { - 1
+reset() - 1
+const fs = process.env.NODE_ENV === 'test' ? memfs : fse - 1
+export function reset() { - 1
+vol.reset() - 1
+vol.fromJSON({ - 1
+'test.out': '' - 1
+}, process.cwd()) - 1
+valid = await this.validateAuthToken(token) - 1
+test('runs the version command', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['graphcool', 'version'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+expect(err.code).toBe(0) - 1
+}) - 1
+test('errors with invalid arguments', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['graphcool', 'version', '--invalid-flag'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+expect(err.message).toContain('Unexpected argument --invalid-flag') - 1
+}) - 1
+test('errors when command not found', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['graphcool', 'foobar12345'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+if (!err.code) { - 1
+throw err - 1
+expect(err.code).toEqual(127) - 1
+}) - 1
+test('throws when cluster does not exist', async () => { - 1
+const env = makeEnvironment() - 1
+const localFile = ` - 1
+platformToken: 'secret-token' - 1
+targets: - 1
+env.loadRCs(localFile, null) - 1
+await expect(env.out.stderr.output).toMatch(/Could not find cluster local defined for target dev in/) - 1
+}) - 1
+Paths - 1
+if (copy.targets) { - 1
+copy.targets = this.serializeTargets(copy.targets) - 1
+serializeTargets(targets: Targets) { - 1
+return mapValues<Target, string>(targets, t => `${t.cluster}/${t.id}`) - 1
+${localAddr}:${localPort}/subscriptions/v1/${projectId}` - 1
+doJobs(options.cachePath, options.request) - 1
+if nothing is found, try again with taking what is before : - 1
+this.fileRefSyntax = RegExp(/^file\((~?[a-zA-Z0-9._\-/]+?)\)/g); - 1
+this.cfRefSyntax = RegExp(/^cf:/g); - 1
+this.s3RefSyntax = RegExp(/^s3:(.+?)\/(.+)$/); - 1
+this.ssmRefSyntax = RegExp(/^ssm:([a-zA-Z0-9_.-/]+)[~]?(true|false)?/); - 1
+return property; - 1
+} else if (variableString.match(this.fileRefSyntax)) { - 1
+return this.getValueFromFile(variableString); - 1
+} else if (variableString.match(this.cfRefSyntax)) { - 1
+return this.getValueFromCf(variableString); - 1
+} else if (variableString.match(this.s3RefSyntax)) { - 1
+return this.getValueFromS3(variableString); - 1
+} else if (variableString.match(this.ssmRefSyntax)) { - 1
+return this.getValueFromSsm(variableString); - 1
+getValueFromFile(variableString) { - 1
+const matchedFileRefString = variableString.match(this.fileRefSyntax)[0]; - 1
+const referencedFileRelativePath = matchedFileRefString - 1
+.replace(this.fileRefSyntax, (match, varName) => varName.trim()) - 1
+.replace('~', os.homedir()); - 1
+const referencedFileFullPath = (path.isAbsolute(referencedFileRelativePath) ? - 1
+referencedFileRelativePath : - 1
+path.join(this.graphcool.config.servicePath, referencedFileRelativePath)); - 1
+let fileExtension = referencedFileRelativePath.split('.'); - 1
+fileExtension = fileExtension[fileExtension.length - 1]; - 1
+if (!this.graphcool.utils.fileExistsSync(referencedFileFullPath)) { - 1
+return BbPromise.resolve(undefined); - 1
+let valueToPopulate; - 1
+if (fileExtension === 'js') { - 1
+const variableArray = variableString.split(':'); - 1
+let returnValueFunction; - 1
+if (variableArray[1]) { - 1
+let jsModule = variableArray[1]; - 1
+jsModule = jsModule.split('.')[0]; - 1
+returnValueFunction = jsFile[jsModule]; - 1
+} else { - 1
+returnValueFunction = jsFile; - 1
+if (typeof returnValueFunction !== 'function') { - 1
+throw new this.graphcool.classes - 1
+.Error([ - 1
+'Invalid variable syntax when referencing', - 1
+` file "${referencedFileRelativePath}".`, - 1
+' Check if your javascript is exporting a function that returns a value.', - 1
+].join('')); - 1
+valueToPopulate = returnValueFunction.call(jsFile); - 1
+return BbPromise.resolve(valueToPopulate).then(valueToPopulateResolved => { - 1
+let deepProperties = variableString.replace(matchedFileRefString, ''); - 1
+deepProperties = deepProperties.slice(1).split('.'); - 1
+deepProperties.splice(0, 1); - 1
+return this.getDeepValue(deepProperties, valueToPopulateResolved) - 1
+.then(deepValueToPopulateResolved => { - 1
+if (typeof deepValueToPopulateResolved === 'undefined') { - 1
+const errorMessage = [ - 1
+'Invalid variable syntax when referencing', - 1
+` file "${referencedFileRelativePath}".`, - 1
+' Check if your javascript is returning the correct data.', - 1
+].join(''); - 1
+throw new this.graphcool.classes - 1
+.Error(errorMessage); - 1
+return BbPromise.resolve(deepValueToPopulateResolved); - 1
+}); - 1
+}); - 1
+if (fileExtension !== 'js') { - 1
+valueToPopulate = this.graphcool.utils.readFileSync(referencedFileFullPath); - 1
+if (matchedFileRefString !== variableString) { - 1
+let deepProperties = variableString - 1
+.replace(matchedFileRefString, ''); - 1
+if (deepProperties.substring(0, 1) !== ':') { - 1
+const errorMessage = [ - 1
+'Invalid variable syntax when referencing', - 1
+` file "${referencedFileRelativePath}" sub properties`, - 1
+' Please use ":" to reference sub properties.', - 1
+].join(''); - 1
+throw new this.graphcool.classes - 1
+.Error(errorMessage); - 1
+deepProperties = deepProperties.slice(1).split('.'); - 1
+return this.getDeepValue(deepProperties, valueToPopulate); - 1
+return BbPromise.resolve(valueToPopulate); - 1
+getValueFromCf(variableString) { - 1
+const variableStringWithoutSource = variableString.split(':')[1].split('.'); - 1
+const stackName = variableStringWithoutSource[0]; - 1
+const outputLogicalId = variableStringWithoutSource[1]; - 1
+return this.graphcool.getProvider('aws') - 1
+.request('CloudFormation', - 1
+'describeStacks', - 1
+{ StackName: stackName }, - 1
+this.options.stage, - 1
+this.options.region) - 1
+.then(result => { - 1
+const outputs = result.Stacks[0].Outputs; - 1
+const output = outputs.find(x => x.OutputKey === outputLogicalId); - 1
+if (output === undefined) { - 1
+const errorMessage = [ - 1
+'Trying to request a non exported variable from CloudFormation.', - 1
+` Stack name: "${stackName}"`, - 1
+` Requested variable: "${outputLogicalId}".`, - 1
+].join(''); - 1
+throw new this.graphcool.classes - 1
+.Error(errorMessage); - 1
+return output.OutputValue; - 1
+}); - 1
+getValueFromS3(variableString) { - 1
+const groups = variableString.match(this.s3RefSyntax); - 1
+const bucket = groups[1]; - 1
+const key = groups[2]; - 1
+return this.graphcool.getProvider('aws') - 1
+.request('S3', - 1
+'getObject', - 1
+Bucket: bucket, - 1
+Key: key, - 1
+}, - 1
+this.options.stage, - 1
+this.options.region) - 1
+.then( - 1
+response => response.Body.toString(), - 1
+err => { - 1
+const errorMessage = `Error getting value for ${variableString}. ${err.message}`; - 1
+throw new this.graphcool.classes.Error(errorMessage); - 1
+); - 1
+getValueFromSsm(variableString) { - 1
+const groups = variableString.match(this.ssmRefSyntax); - 1
+const param = groups[1]; - 1
+const decrypt = (groups[2] === 'true'); - 1
+return this.graphcool.getProvider('aws') - 1
+.request('SSM', - 1
+'getParameter', - 1
+Name: param, - 1
+WithDecryption: decrypt, - 1
+}, - 1
+this.options.stage, - 1
+this.options.region) - 1
+.then( - 1
+response => BbPromise.resolve(response.Parameter.Value), - 1
+err => { - 1
+const expectedErrorMessage = `Parameter ${param} not found.`; - 1
+if (err.message !== expectedErrorMessage) { - 1
+throw new this.graphcool.classes.Error(err.message); - 1
+return BbPromise.resolve(undefined); - 1
+); - 1
+} else if (variableString.match(this.fileRefSyntax)) { - 1
+varType = 'file'; - 1
+} else if (variableString.match(this.ssmRefSyntax)) { - 1
+varType = 'SSM parameter'; - 1
+if (definition.modules) { - 1
+for (const moduleName of Object.keys(definition.modules)) { - 1
+const modulePath = definition.modules[moduleName] - 1
+const resolvedModulePath = path.join(inputDir, modulePath) - 1
+const module = await fsToModule(resolvedModulePath, out, moduleName, args) - 1
+modules.push({ - 1
+...module, - 1
+name: moduleName, - 1
+}) - 1
+if (!silent) { - 1
+out.log(chalk.blue(`Written to graphcool.yml\n`)) - 1
+if (!silent) { - 1
+out.log(chalk.blue(`Written to ${relativePath}\n`)) - 1
+group types, - 1
+Ctrl-c - 1
+if (process.env.NODE_ENV === 'test') { - 1
+Client.prototype.mock = function({ request, response }) { - 1
+if (!this.mocks) { - 1
+this.mocks = {} - 1
+this.mocks[JSON.stringify(request, null, 2)] = response - 1
+dynamodb.${region.toLowerCase().replace(/_/g, '-')}.amazonaws.com` - 1
+if (this.config.pjson.main) { - 1
+if main is set in package.json, add plugin as self - 1
+plugins.push(new PluginPath({output: this.out, type: 'core', path: this.config.root})) - 1
+linked: LinkedPlugins - 1
+user: UserPlugins - 1
+this.linked = new LinkedPlugins(this) - 1
+this.user = new UserPlugins(this) - 1
+this.linked, - 1
+this.user, - 1
+async install(name: string, tag: string = 'latest') { - 1
+const downgrade = await this.lock.upgrade() - 1
+await this.load() - 1
+if (this.plugins.find(p => p.name === name && p.tag === tag)) { - 1
+throw new Error(`Plugin ${name} is already installed`) - 1
+const path = await this.user.install(name, tag) - 1
+this.clearCache(path) - 1
+await downgrade() - 1
+async update() { - 1
+if (this.user.list().length === 0) return - 1
+this.out.action.start(`${this.config.name}: Updating plugins`) - 1
+let downgrade = await this.lock.upgrade() - 1
+await this.user.update() - 1
+this.clearCache(...(await this.user.list()).map(p => p.path)) - 1
+await downgrade() - 1
+async uninstall(name: string) { - 1
+await this.load() - 1
+let plugin = this.plugins.filter(p => ['user', 'link'].includes(p.type)).find(p => p.name === name) - 1
+if (!plugin) throw new Error(`${name} is not installed`) - 1
+let downgrade = await this.lock.upgrade() - 1
+switch (plugin.type) { - 1
+case 'user': { - 1
+if (!this.config.debug) this.out.action.start(`Uninstalling plugin ${name}`) - 1
+await this.user.remove(name) - 1
+break - 1
+case 'link': { - 1
+if (!this.config.debug) this.out.action.start(`Unlinking plugin ${name}`) - 1
+this.linked.remove(plugin.path) - 1
+break - 1
+this.clearCache(plugin.path) - 1
+await downgrade() - 1
+this.out.action.stop() - 1
+addPackageToPJSON(name: string, version: string = '') { - 1
+this.user.addPackageToPJSON(name, version) - 1
+async addLinkedPlugin(p: string) { - 1
+let downgrade = await this.lock.upgrade() - 1
+await this.load() - 1
+await this.linked.add(p) - 1
+this.clearCache(p) - 1
+await downgrade() - 1
+process.env.CACHE_REQUIRE_PATHS_FILE = this.config.requireCachePath - 1
+require('cache-require-paths') - 1
+const list = groupTopics.map(t => [ - 1
+t.id, - 1
+t.description ? chalk.dim(t.description) : null, - 1
+]) - 1
+console.log(cmds) - 1
+if (t.id === 'local') { - 1
+export const ROOT_TOKEN = '__ROOT_TOKEN__'  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1MTAwNjQwMzYsImNsaWVudElkIjoiY2l3ajBkc2V1MGY0bDAxMjJ1NDdzcXE1bSIsInByb2plY3RJZCI6ImNqOXBvN2M4dDFncHUwMTQ1cmtpOGxmdnciLCJwZXJtYW5lbnRBdXRoVG9rZW5JZCI6ImNqOXBwNHpsNjJvNXkwMTQ1emh4aXdwZ2gifQ.VFem0gkCIRFDjMv71z1zH1BCyXJ26rPua679LtBu2vg - 1
+const SERVICE_ID = '__SERVICE_ID__'  cj9po7c8t1gpu0145rki8lfvw - 1
+const userResult = await mergeInfo.delegate('query', 'User', { id: authenticateResult.id }, context, info) - 1
+return - 1
+const userResult = await mergeInfo.delegate('query', 'User', { id: signupResult.id }, context, info) - 1
+return - 1
+const userResult = await mergeInfo.delegate('query', 'User', { id: authenticateResult.id }, context, info) - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+return - 1
+event = { - 1
+"data": { - 1
+"User": { - 1
+"node": { - 1
+"id": "cj8wscby6nl7u0133zu7c8a62" - 1
+"name": "Sarah" - 1
+}, - 1
+TODO: command (cmd: Class<Command<>>): string { - 1
+TODO: commandLine (cmd: Class<Command<>>): [string, ?string] { - 1
+TODO renderFlags (flags: [string, Flag][]): string { - 1
+if (process.env.NODE_ENV === 'test') { - 1
+reset() - 1
+const fs = process.env.NODE_ENV === 'test' ? memfs : fse - 1
+export function reset() { - 1
+vol.reset() - 1
+vol.fromJSON({ - 1
+'test.out': '' - 1
+}, process.cwd()) - 1
+import { Auth } from './Auth' - 1
+auth: Auth - 1
+this.auth = new Auth(this.out, this.config, this.env, this.client) - 1
+this.client.setAuth(this.auth) - 1
+if (mockDefinition) { - 1
+this.definition.set(mockDefinition) - 1
+if (mockRC) { - 1
+this.env.localRC = mockRC - 1
+test('runs the version command', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['prisma', 'version'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+expect(err.code).toBe(0) - 1
+}) - 1
+test('errors with invalid arguments', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['prisma', 'version', '--invalid-flag'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+expect(err.message).toContain('Unexpected argument --invalid-flag') - 1
+}) - 1
+test('errors when command not found', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['prisma', 'foobar12345'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+if (!err.code) { - 1
+throw err - 1
+expect(err.code).toEqual(127) - 1
+}) - 1
+Paths - 1
+import {Config} from './Config' - 1
+const mockDotFile = { - 1
+"token": "test-token" - 1
+describe('config', () => { - 1
+test('should init paths correct in subfolder', async () => { - 1
+const home = path.join(os.tmpdir(), `${cuid()}`) - 1
+const definitionDir = path.join(os.tmpdir(), `${cuid()}`) - 1
+const cwd = path.join(definitionDir, 'src') - 1
+fs.mkdirpSync(definitionDir) - 1
+fs.mkdirpSync(home) - 1
+fs.copySync(path.join(__dirname, '../test/test-project'), definitionDir) - 1
+const config = new Config({mock: true, home, cwd}) - 1
+expect(config.definitionDir).toBe(definitionDir) - 1
+expect(config.definitionPath).toBe(path.join(definitionDir, 'prisma.yml')) - 1
+}) - 1
+test('should allow .prismarc file in current folder', async () => { - 1
+const home = path.join(os.tmpdir(), `${cuid()}`) - 1
+const definitionDir = path.join(home, 'definition') - 1
+const cwd = path.join(definitionDir, 'src') - 1
+fs.mkdirpSync(definitionDir) - 1
+fs.mkdirpSync(home) - 1
+fs.copySync(path.join(__dirname, '../test/test-project'), definitionDir) - 1
+const dotPrismaPath = path.join(definitionDir, '.prismarc') - 1
+fs.writeFileSync(dotPrismaPath, JSON.stringify(mockDotFile)) - 1
+const config = new Config({mock: true, home, cwd}) - 1
+expect(config.localRCPath).toBe(dotPrismaPath) - 1
+}) - 1
+}) - 1
+doJobs(options.cachePath, options.request) - 1
+if nothing is found, try again with taking what is before : - 1
+group types, - 1
+const groupedByType = groupBy(steps, m => m.type) - 1
+Object.keys(groupedByType).forEach(type => { - 1
+const typeMessages = groupedByType[type] - 1
+this.out.log('\n' + printType(type) + '\n') - 1
+const groupedByName = groupBy(typeMessages, m => m.name.split('.')[0]) - 1
+Object.keys(groupedByName).forEach(name => { - 1
+this.out.log(`  ${chalk.bold(name)}`) - 1
+const nameMessages = groupedByName[name] - 1
+nameMessages.forEach(this.printMigrationMessage, this) - 1
+}) - 1
+}) - 1
+this.out.log('') - 1
+Ctrl-c - 1
+if (process.env.NODE_ENV === 'test') { - 1
+Client.prototype.mock = function({ request, response }) { - 1
+if (!this.mocks) { - 1
+this.mocks = {} - 1
+this.mocks[JSON.stringify(request, null, 2)] = response - 1
+dynamodb.${region.toLowerCase().replace(/_/g, '-')}.amazonaws.com` - 1
+if (this.config.pjson.main) { - 1
+if main is set in package.json, add plugin as self - 1
+plugins.push(new PluginPath({output: this.out, type: 'core', path: this.config.root})) - 1
+linked: LinkedPlugins - 1
+user: UserPlugins - 1
+this.linked = new LinkedPlugins(this) - 1
+this.user = new UserPlugins(this) - 1
+this.linked, - 1
+this.user, - 1
+async install(name: string, tag: string = 'latest') { - 1
+const downgrade = await this.lock.upgrade() - 1
+await this.load() - 1
+if (this.plugins.find(p => p.name === name && p.tag === tag)) { - 1
+throw new Error(`Plugin ${name} is already installed`) - 1
+const path = await this.user.install(name, tag) - 1
+this.clearCache(path) - 1
+await downgrade() - 1
+async update() { - 1
+if (this.user.list().length === 0) return - 1
+this.out.action.start(`${this.config.name}: Updating plugins`) - 1
+let downgrade = await this.lock.upgrade() - 1
+await this.user.update() - 1
+this.clearCache(...(await this.user.list()).map(p => p.path)) - 1
+await downgrade() - 1
+async uninstall(name: string) { - 1
+await this.load() - 1
+let plugin = this.plugins.filter(p => ['user', 'link'].includes(p.type)).find(p => p.name === name) - 1
+if (!plugin) throw new Error(`${name} is not installed`) - 1
+let downgrade = await this.lock.upgrade() - 1
+switch (plugin.type) { - 1
+case 'user': { - 1
+if (!this.config.debug) this.out.action.start(`Uninstalling plugin ${name}`) - 1
+await this.user.remove(name) - 1
+break - 1
+case 'link': { - 1
+if (!this.config.debug) this.out.action.start(`Unlinking plugin ${name}`) - 1
+this.linked.remove(plugin.path) - 1
+break - 1
+this.clearCache(plugin.path) - 1
+await downgrade() - 1
+this.out.action.stop() - 1
+addPackageToPJSON(name: string, version: string = '') { - 1
+this.user.addPackageToPJSON(name, version) - 1
+async addLinkedPlugin(p: string) { - 1
+let downgrade = await this.lock.upgrade() - 1
+await this.load() - 1
+await this.linked.add(p) - 1
+this.clearCache(p) - 1
+await downgrade() - 1
+process.env.CACHE_REQUIRE_PATHS_FILE = this.config.requireCachePath - 1
+require('cache-require-paths') - 1
+const list = groupTopics.map(t => [ - 1
+t.id, - 1
+t.description ? chalk.dim(t.description) : null, - 1
+]) - 1
+console.log(cmds) - 1
+if (t.id === 'cluster') { - 1
+import Auth from './commands/auth/index' - 1
+import Console from './commands/console' - 1
+import Delete from './commands/delete/index' - 1
+import RootTokens from './commands/root-token/index' - 1
+import FunctionLogs from './commands/logs/function' - 1
+import PsLocal from './commands/local/ps' - 1
+Auth, - 1
+Auth, - 1
+Console, - 1
+RootTokens, - 1
+FunctionLogs, - 1
+${devPrefix}console.graph.cool/token?token=${token}${ - 1
+export const playgroundURL = (token: string, projectName: string) => - 1
+managementApiSecret: somesecret - 1
+databases: - 1
+default: - 1
+connector: mysql - 1
+active: true - 1
+port: 3306 - 1
+user: someuser - 1
+password: existingpw - 1
+process.stdin.end() - 1
+const database = await this.ask({ - 1
+message: 'Enter database name (only needed when you already have data)', - 1
+key: 'database', - 1
+}) - 1
+const alreadyData = await this.ask({ - 1
+message: 'Do you already have data in the database? (yes/no)', - 1
+key: 'alreadyData', - 1
+defaultValue: 'no', - 1
+validate: value => - 1
+['yes', 'no'].includes(value) ? true : 'Please answer either yes or no', - 1
+}) - 1
+database, - 1
+pageSize: 9, - 1
+this.checkFieldName(node) - 1
+continue - 1
+inquirer.prompt = promptMock - 1
+return inquirer - 1
+import { Command, flags, Flags, ProjectDefinition } from 'prisma-cli-engine' - 1
+import chalk from 'chalk' - 1
+import { defaultDefinition, defaultPjson, examples } from '../../examples' - 1
+import { repeat, flatten } from 'lodash' - 1
+export default class Init extends Command { - 1
+static topic = 'init' - 1
+static description = 'Create files for new services' - 1
+static group = 'general' - 1
+static help = ` - 1
+${chalk.green.bold('Examples:')} - 1
+${chalk.gray('-')} Initialize a new Prisma service - 1
+${chalk.green('$ prisma init')} - 1
+static flags: Flags = { - 1
+force: flags.boolean({ - 1
+char: 'f', - 1
+'Initialize even if the folder already contains prisma files', - 1
+}), - 1
+copy: flags.string({ - 1
+char: 'c', - 1
+'ID or alias of the service, that the schema should be copied from', - 1
+}), - 1
+static args = [ - 1
+name: 'dirName', - 1
+description: 'Folder to initialize in (optional)', - 1
+}, - 1
+async run() { - 1
+const { copy, force } = this.flags - 1
+const dirName = this.args!.dirName - 1
+if (dirName) { - 1
+const newDefinitionPath = path.join(process.cwd(), dirName + '/') - 1
+fs.mkdirpSync(newDefinitionPath) - 1
+this.config.definitionDir = newDefinitionPath - 1
+this.config.localRCPath = path.join(newDefinitionPath, '.prismarc') - 1
+const pjson = { - 1
+...defaultPjson, - 1
+name: path.basename(this.config.definitionDir), - 1
+const files = fs.readdirSync(this.config.definitionDir) - 1
+if ( - 1
+files.length > 0 && - 1
+!(files.length === 1 && files[0] === '.prismarc') && - 1
+files.includes('prisma.yml') - 1
+) { - 1
+this.out.log(` - 1
+The directory ${chalk.green( - 1
+this.config.definitionDir, - 1
+)} contains files that could conflict: - 1
+${files.map(f => `  ${f}`).join('\n')} - 1
+${chalk.bold( - 1
+'NOTE:', - 1
+)} The behavior of the init command changed, to deploy a project, please use ${chalk.green( - 1
+'prisma deploy', - 1
+)} - 1
+To force the init process in this folder, use ${chalk.green( - 1
+'prisma init --force', - 1
+)}`) - 1
+if (force) { - 1
+await this.askForConfirmation(this.config.definitionDir) - 1
+} else { - 1
+this.out.exit(1) - 1
+if (template) { - 1
+const projectDefinition = examples[template] - 1
+if (!projectDefinition) { - 1
+this.out.error(`${template} is not a valid template`) - 1
+this.definition.set(projectDefinition) - 1
+if (copy) { - 1
+const info = await this.client.fetchProjectInfo(copy) - 1
+this.definition.set(info.projectDefinition) - 1
+if (!this.definition.definition) { - 1
+const newDefinition = await this.interactiveInit() - 1
+const newDefinition = defaultDefinition - 1
+this.definition.set(newDefinition) - 1
+let relativeDir = path.relative(process.cwd(), this.config.definitionDir) - 1
+relativeDir = relativeDir.length === 0 ? '.' : relativeDir - 1
+this.out.action.start( - 1
+`Creating a new Prisma service in ${chalk.green(relativeDir)}`, - 1
+this.definition.save(undefined, false) - 1
+this.out.action.stop() - 1
+this.out.log(`${chalk.dim.bold('\nWritten files' + ':')}`) - 1
+fs.writeFileSync( - 1
+path.join(this.config.definitionDir, 'package.json'), - 1
+JSON.stringify(pjson, null, 2), - 1
+const createdFiles = flatten( - 1
+this.definition.definition!.modules.map(module => - 1
+Object.keys(module.files), - 1
+), - 1
+).concat(['prisma.yml', 'package.json']) - 1
+this.out.filesTree(createdFiles) - 1
+const cdInstruction = - 1
+relativeDir === '.' - 1
+? '' - 1
+: `To get started, cd into the new directory: - 1
+${chalk.green(`cd ${relativeDir}`)} - 1
+${chalk.green('prisma deploy')} - 1
+${chalk.green('prisma local up')} - 1
+${chalk.green('prisma add-template auth/facebook')} - 1
+`) - 1
+async interactiveInit(): Promise<ProjectDefinition> { - 1
+const initQuestion = { - 1
+name: 'init', - 1
+type: 'list', - 1
+message: 'How do you want to start?', - 1
+choices: [ - 1
+value: 'blank', - 1
+name: [ - 1
+`${chalk.bold('New blank service')}`, - 1
+`  Creates a new Prisma service from scratch.`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'copy', - 1
+name: [ - 1
+`${chalk.bold('Copying an existing service')}`, - 1
+`  Copies a service from your account`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'example', - 1
+name: [ - 1
+`${chalk.bold('Based on example')}`, - 1
+`  Creates a new Prisma service based on an example`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+], - 1
+pageSize: 13, - 1
+const { init } = await this.out.prompt([initQuestion]) - 1
+switch (init) { - 1
+case 'blank': - 1
+this.out.up(7) - 1
+return defaultDefinition - 1
+case 'copy': - 1
+await this.auth.ensureAuth() - 1
+const projectId = await this.projectSelection() - 1
+this.out.up(4) - 1
+const info = await this.client.fetchProjectInfo(projectId) - 1
+return info.projectDefinition - 1
+case 'example': - 1
+return await this.exampleSelection() - 1
+return null as any - 1
+private async projectSelection() { - 1
+const projects = await this.client.fetchProjects() - 1
+const choices = projects - 1
+.map(p => ({ - 1
+name: `${p.name} (${p.id})`, - 1
+value: p.id, - 1
+})) - 1
+.concat(new inquirer.Separator(chalk.bold.green(repeat('-', 50)))) - 1
+const question = { - 1
+name: 'project', - 1
+type: 'list', - 1
+message: 'Please choose a project', - 1
+choices, - 1
+pageSize: Math.min(process.stdout.rows!, projects.length) - 2, - 1
+const { project } = await this.out.prompt([question]) - 1
+return project - 1
+private async exampleSelection(): Promise<ProjectDefinition> { - 1
+const question = { - 1
+name: 'example', - 1
+type: 'list', - 1
+message: 'Please choose an example', - 1
+choices: [ - 1
+value: 'instagram', - 1
+name: [ - 1
+`${chalk.bold('Instagram')}`, - 1
+`Contains an instagram clone with permission logic`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'stripe', - 1
+name: [ - 1
+`${chalk.bold('Stripe Checkout')}`, - 1
+`An example integrating the stripe checkout with schema extensions`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'sendgrid', - 1
+name: [ - 1
+`${chalk.bold('Sendgrid Mails')}`, - 1
+`An example that shows how to connect Prisma to the Sendgrid API`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+], - 1
+pageSize: 12, - 1
+const { example } = await this.out.prompt(question) - 1
+return examples[example] - 1
+private async askForConfirmation(folder: string) { - 1
+const confirmationQuestion = { - 1
+name: 'confirmation', - 1
+type: 'input', - 1
+message: `Are you sure that you want to init a new service in ${chalk.green( - 1
+folder, - 1
+)}? y/N`, - 1
+default: 'n', - 1
+const { confirmation }: { confirmation: string } = await this.out.prompt( - 1
+confirmationQuestion, - 1
+if (confirmation.toLowerCase().startsWith('n')) { - 1
+this.out.exit(0) - 1
+${this.hostName}:${this.envVars.PORT}`, - 1
+prisma-database:${port}/cluster/schema`, - 1
+${this.hostName}:${port}`, - 1
+localfaas:${FUNCTIONS_PORT}`, - 1
+${ - 1
+${this.hostName}:${port}`, - 1
+this.out.log(chalk.dim(`$ docker-compose ${argv.join(' ')}\n`)) - 1
+docs.docker.com/compose/install/`, - 1
+docs.docker.com/compose/install/`, - 1
+stdin (default) - 1
+stdout (default) - 1
+console.error(e) - 1
+static group = 'local' - 1
+const isWin = true - 1
+this.out.action.start(`Nuking local prisma cluster`) - 1
+this.out.action.stop(prettyTime(Date.now() - before)) - 1
+${showInit && `  ${chalk.green('$ prisma init')}\n`}  ${chalk.green( - 1
+'$ prisma deploy', - 1
+)} - 1
+`) - 1
+g, '0') - 1
+?cwd=${ - 1
+const { id } = await this.env.getTarget(stage) - 1
+continue - 1
+import { Command, flags, Flags } from 'prisma-cli-engine' - 1
+import chalk from 'chalk' - 1
+export default class Auth extends Command { - 1
+static topic = 'login' - 1
+static description = 'Login or signup to the Prisma Platform' - 1
+static group = 'platform' - 1
+static help = ` - 1
+${chalk.green('Examples:')} - 1
+${chalk.gray('-')} Authenticate using the browser - 1
+${chalk.green('$ prisma login')} - 1
+${chalk.green('$ prisma login -t <token>')} - 1
+static flags: Flags = { - 1
+token: flags.string({ - 1
+char: 'T', - 1
+description: 'System token', - 1
+}), - 1
+async run() { - 1
+const { token } = this.flags - 1
+if (token) { - 1
+this.out.log('Using token from --token flag') - 1
+this.auth.setToken(token) - 1
+const alreadyAuthenticated = await this.auth.ensureAuth() - 1
+if (token) { - 1
+this.env.setToken(token) - 1
+this.env.saveGlobalRC() - 1
+this.out.log( - 1
+`Saved new token to ${chalk.bold(this.config.globalRCPath)}`, - 1
+} else if (alreadyAuthenticated) { - 1
+this.out.log( - 1
+`You are already authenticated. Your local token is saved at ${chalk.bold( - 1
+this.config.globalRCPath, - 1
+)}`, - 1
+if (clusterMatch[2] && cliMatch[2]) { - 1
+const secondarySatisfied = semver.satisfies( - 1
+cliMatch[2], - 1
+`~${clusterMatch[2]}`, - 1
+if (!secondarySatisfied) { - 1
+throw error - 1
+this.out.migrati - 1
+const clusters = this.env.clusters.filter(c => !c.shared && !c.isPrivate) - 1
+const clusterNames: string[][] = clusters.map(c => { - 1
+const note = - 1
+c.baseUrl.includes('localhost') || c.baseUrl.includes('127.0.0.1') - 1
+? 'Local cluster (requires Docker)' - 1
+: 'Self-hosted' - 1
+return [c.name, note] - 1
+}) - 1
+if (clusterNames.length === 0) { - 1
+clusterNames.push(['local', 'Local cluster (requires Docker)']) - 1
+return clusterNames - 1
+const workspaces = await this.client.getWorkspaces() - 1
+const clusters = this.env.clusters.filter( - 1
+c => c.shared && c.name !== 'shared-public-demo', - 1
+bit.ly/prisma-graphql-deployment`, - 1
+bit.ly/prisma-graphql-deployment`, - 1
+import { Command, flags, Flags } from 'prisma-cli-engine' - 1
+import chalk from 'chalk' - 1
+import { sortByTimestamp } from '../../util' - 1
+import {flatMap} from 'lodash' - 1
+const debug = require('debug')('logs') - 1
+export default class FunctionLogs extends Command { - 1
+static topic = 'logs' - 1
+static description = 'Output service logs' - 1
+static group = 'general' - 1
+static flags: Flags = { - 1
+stage: flags.string({ - 1
+char: 't', - 1
+description: 'Target to get logs from', - 1
+}), - 1
+tail: flags.boolean({ - 1
+description: 'Tail function logs in realtime', - 1
+}), - 1
+function: flags.string({ - 1
+char: 'f', - 1
+description: 'Name of the function to get the logs from', - 1
+}), - 1
+async run() { - 1
+const { tail, stage } = this.flags - 1
+const functionName = this.flags.function - 1
+const {id} = await this.env.getTarget(stage) - 1
+debug(`function name ${functionName}`) - 1
+debug(`service id ${id}`) - 1
+await this.auth.ensureAuth() - 1
+if (!functionName) { - 1
+await this.provideAllFunctionLogs(id, tail) - 1
+} else { - 1
+await this.provideSingleFunctionLogs(id, functionName, tail) - 1
+private async provideAllFunctionLogs(id: string, tail?: boolean) { - 1
+let logs = (await this.client.getAllFunctionLogs(id)) || [] - 1
+if (logs.length === 0) { - 1
+this.out.log( - 1
+`No messages have been logged in the last 30 min for service ${chalk.bold( - 1
+id, - 1
+)}`, - 1
+} else { - 1
+logs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(logs)) - 1
+if (tail) { - 1
+setInterval(async () => { - 1
+const tailLogs = await this.client.getAllFunctionLogs(id, 50) - 1
+if (tailLogs) { - 1
+if (tailLogs.length > 0) { - 1
+const newLogs = differenceBy(tailLogs, logs, l => l.id) - 1
+if (newLogs.length > 0) { - 1
+newLogs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(newLogs)) - 1
+logs = logs.concat(newLogs) - 1
+} else { - 1
+this.out.log(`Service ${id} can't be found anymore`) - 1
+}, 4000) - 1
+private async provideSingleFunctionLogs(id: string, functionName: string, tail?: boolean) { - 1
+let fn = await this.client.getFunction(id, functionName) - 1
+if (!fn) { - 1
+this.out.error( - 1
+`There is no function with the name ${functionName}. Run ${chalk.bold( - 1
+'prisma functions', - 1
+)} to list all functions.`, - 1
+} else { - 1
+let logs = (await this.client.getFunctionLogs(fn.id)) || [] - 1
+if (logs.length === 0) { - 1
+this.out.log( - 1
+`No messages have been logged in the last 30 min for function ${chalk.bold( - 1
+functionName, - 1
+)}`, - 1
+} else { - 1
+logs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(logs)) - 1
+if (tail) { - 1
+setInterval(async () => { - 1
+const tailLogs = await this.client.getFunctionLogs(fn!.id, 50) - 1
+if (tailLogs === null) { - 1
+fn = await this.client.getFunction(id, functionName) - 1
+} else { - 1
+if (tailLogs.length > 0) { - 1
+const newLogs = differenceBy(tailLogs, logs, l => l.id) - 1
+if (newLogs.length > 0) { - 1
+newLogs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(newLogs)) - 1
+logs = logs.concat(newLogs) - 1
+}, 4000) - 1
+private prettifyLogs(logs: any) { - 1
+return logs - 1
+.map(log => { - 1
+const json = JSON.parse(log.message) - 1
+if (json.event) { - 1
+try { - 1
+json.event = JSON.parse(json.event) - 1
+} catch (e) { - 1
+const styleLog = (l: string) => { - 1
+const logs = this.lambdaToArray(l) - 1
+let potentialJson = l.slice(62).trim() - 1
+try { - 1
+potentialJson = JSON.parse(potentialJson) - 1
+} catch (e) { - 1
+return { - 1
+[l.slice(0, 24)]: potentialJson, - 1
+if (json.logs) { - 1
+json.logs = flatMap(json.logs.map(this.lambdaToArray)).map(styleLog) - 1
+const prettyMessage = this.out.getStyledJSON(json) - 1
+const status = log.status === 'SUCCESS' ? 'green' : 'red' - 1
+return `${chalk.cyan.bold(log.timestamp)} ${chalk.blue.bold( - 1
+`${log.duration}ms`, - 1
+)} ${chalk.bold[status](log.status)} ${prettyMessage}` - 1
+}) - 1
+.join('\n') - 1
+private lambdaToArray(logs: string): string[] { - 1
+logs = logs.replace(/\t/g, '  ') - 1
+const regex = /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+. - 1
+const lines = logs.split('\n') - 1
+.filter(l => !l.startsWith('START') && !l.startsWith('END') && !l.startsWith('REPORT')) - 1
+const merged = lines - 1
+.reduce((acc, curr, index) => { - 1
+if (lines[index + 1] && lines[index + 1].match(regex)) { - 1
+return { - 1
+lines: acc.lines.concat(acc.currentLine + (acc.currentLine.length > 0 ? '\n' : '') + curr), - 1
+currentLine: '' - 1
+} else { - 1
+return { - 1
+lines: acc.lines, - 1
+currentLine: acc.currentLine + (acc.currentLine.length > 0 ? '\n' : '') + curr, - 1
+}, { - 1
+lines: [] as any, - 1
+currentLine: '' - 1
+}) - 1
+return merged.lines.concat(merged.currentLine) - 1
+localhost:60000`, '') - 1
+this.fileRefSyntax = RegExp(/^file\((~?[a-zA-Z0-9._\-/]+?)\)/g); - 1
+this.cfRefSyntax = RegExp(/^cf:/g); - 1
+this.s3RefSyntax = RegExp(/^s3:(.+?)\/(.+)$/); - 1
+this.ssmRefSyntax = RegExp(/^ssm:([a-zA-Z0-9_.-/]+)[~]?(true|false)?/); - 1
+return property; - 1
+} else if (variableString.match(this.fileRefSyntax)) { - 1
+return this.getValueFromFile(variableString); - 1
+} else if (variableString.match(this.cfRefSyntax)) { - 1
+return this.getValueFromCf(variableString); - 1
+} else if (variableString.match(this.s3RefSyntax)) { - 1
+return this.getValueFromS3(variableString); - 1
+} else if (variableString.match(this.ssmRefSyntax)) { - 1
+return this.getValueFromSsm(variableString); - 1
+getValueFromFile(variableString) { - 1
+const matchedFileRefString = variableString.match(this.fileRefSyntax)[0]; - 1
+const referencedFileRelativePath = matchedFileRefString - 1
+.replace(this.fileRefSyntax, (match, varName) => varName.trim()) - 1
+.replace('~', os.homedir()); - 1
+const referencedFileFullPath = (path.isAbsolute(referencedFileRelativePath) ? - 1
+referencedFileRelativePath : - 1
+path.join(this.prisma.config.servicePath, referencedFileRelativePath)); - 1
+let fileExtension = referencedFileRelativePath.split('.'); - 1
+fileExtension = fileExtension[fileExtension.length - 1]; - 1
+if (!this.prisma.utils.fileExistsSync(referencedFileFullPath)) { - 1
+return BbPromise.resolve(undefined); - 1
+let valueToPopulate; - 1
+if (fileExtension === 'js') { - 1
+const variableArray = variableString.split(':'); - 1
+let returnValueFunction; - 1
+if (variableArray[1]) { - 1
+let jsModule = variableArray[1]; - 1
+jsModule = jsModule.split('.')[0]; - 1
+returnValueFunction = jsFile[jsModule]; - 1
+} else { - 1
+returnValueFunction = jsFile; - 1
+if (typeof returnValueFunction !== 'function') { - 1
+throw new this.prisma.classes - 1
+.Error([ - 1
+'Invalid variable syntax when referencing', - 1
+` file "${referencedFileRelativePath}".`, - 1
+' Check if your javascript is exporting a function that returns a value.', - 1
+].join('')); - 1
+valueToPopulate = returnValueFunction.call(jsFile); - 1
+return BbPromise.resolve(valueToPopulate).then(valueToPopulateResolved => { - 1
+let deepProperties = variableString.replace(matchedFileRefString, ''); - 1
+deepProperties = deepProperties.slice(1).split('.'); - 1
+deepProperties.splice(0, 1); - 1
+return this.getDeepValue(deepProperties, valueToPopulateResolved) - 1
+.then(deepValueToPopulateResolved => { - 1
+if (typeof deepValueToPopulateResolved === 'undefined') { - 1
+const errorMessage = [ - 1
+'Invalid variable syntax when referencing', - 1
+` file "${referencedFileRelativePath}".`, - 1
+' Check if your javascript is returning the correct data.', - 1
+].join(''); - 1
+throw new this.prisma.classes - 1
+.Error(errorMessage); - 1
+return BbPromise.resolve(deepValueToPopulateResolved); - 1
+}); - 1
+}); - 1
+if (fileExtension !== 'js') { - 1
+valueToPopulate = this.prisma.utils.readFileSync(referencedFileFullPath); - 1
+if (matchedFileRefString !== variableString) { - 1
+let deepProperties = variableString - 1
+.replace(matchedFileRefString, ''); - 1
+if (deepProperties.substring(0, 1) !== ':') { - 1
+const errorMessage = [ - 1
+'Invalid variable syntax when referencing', - 1
+` file "${referencedFileRelativePath}" sub properties`, - 1
+' Please use ":" to reference sub properties.', - 1
+].join(''); - 1
+throw new this.prisma.classes - 1
+.Error(errorMessage); - 1
+deepProperties = deepProperties.slice(1).split('.'); - 1
+return this.getDeepValue(deepProperties, valueToPopulate); - 1
+return BbPromise.resolve(valueToPopulate); - 1
+getValueFromCf(variableString) { - 1
+const variableStringWithoutSource = variableString.split(':')[1].split('.'); - 1
+const stackName = variableStringWithoutSource[0]; - 1
+const outputLogicalId = variableStringWithoutSource[1]; - 1
+return this.prisma.getProvider('aws') - 1
+.request('CloudFormation', - 1
+'describeStacks', - 1
+{ StackName: stackName }, - 1
+this.options.stage, - 1
+this.options.region) - 1
+.then(result => { - 1
+const outputs = result.Stacks[0].Outputs; - 1
+const output = outputs.find(x => x.OutputKey === outputLogicalId); - 1
+if (output === undefined) { - 1
+const errorMessage = [ - 1
+'Trying to request a non exported variable from CloudFormation.', - 1
+` Stack name: "${stackName}"`, - 1
+` Requested variable: "${outputLogicalId}".`, - 1
+].join(''); - 1
+throw new this.prisma.classes - 1
+.Error(errorMessage); - 1
+return output.OutputValue; - 1
+}); - 1
+getValueFromS3(variableString) { - 1
+const groups = variableString.match(this.s3RefSyntax); - 1
+const bucket = groups[1]; - 1
+const key = groups[2]; - 1
+return this.prisma.getProvider('aws') - 1
+.request('S3', - 1
+'getObject', - 1
+Bucket: bucket, - 1
+Key: key, - 1
+}, - 1
+this.options.stage, - 1
+this.options.region) - 1
+.then( - 1
+response => response.Body.toString(), - 1
+err => { - 1
+const errorMessage = `Error getting value for ${variableString}. ${err.message}`; - 1
+throw new this.prisma.classes.Error(errorMessage); - 1
+); - 1
+getValueFromSsm(variableString) { - 1
+const groups = variableString.match(this.ssmRefSyntax); - 1
+const param = groups[1]; - 1
+const decrypt = (groups[2] === 'true'); - 1
+return this.prisma.getProvider('aws') - 1
+.request('SSM', - 1
+'getParameter', - 1
+Name: param, - 1
+WithDecryption: decrypt, - 1
+}, - 1
+this.options.stage, - 1
+this.options.region) - 1
+.then( - 1
+response => BbPromise.resolve(response.Parameter.Value), - 1
+err => { - 1
+const expectedErrorMessage = `Parameter ${param} not found.`; - 1
+if (err.message !== expectedErrorMessage) { - 1
+throw new this.prisma.classes.Error(err.message); - 1
+return BbPromise.resolve(undefined); - 1
+); - 1
+} else if (variableString.match(this.fileRefSyntax)) { - 1
+varType = 'file'; - 1
+} else if (variableString.match(this.ssmRefSyntax)) { - 1
+varType = 'SSM parameter'; - 1
+const disableAuth = this.definition!.disableAuth - 1
+if (this.secrets === null && !disableAuth) { - 1
+throw new Error( - 1
+'Please either provide a secret in your prisma.yml or disableAuth: true', - 1
+if (!this.service) { - 1
+throw new Error(`Please provide a service property in your prisma.yml`) - 1
+if (!this.stage) { - 1
+throw new Error(`Please provide a stage property in your prisma.yml`) - 1
+if (!this.cluster) { - 1
+throw new Error( - 1
+`Please either provide a cluster or endpoint property in your prisma.yml`, - 1
+, '') - 1
+environmental variables (NO_PROXY, HTTP_PROXY, etc.) - 1
+localhost:4000`)) - 1
+api.github.com/user?access_token=${githubToken}` - 1
+localhost:4000`)) - 1
+localhost:4000`)) - 1
+localhost:4000`)) - 1
+localhost:4000`)) - 1
+localhost:4000`)) - 1
+TODO: command (cmd: Class<Command<>>): string { - 1
+TODO: commandLine (cmd: Class<Command<>>): [string, ?string] { - 1
+TODO renderFlags (flags: [string, Flag][]): string { - 1
+if (process.env.NODE_ENV === 'test') { - 1
+reset() - 1
+const fs = process.env.NODE_ENV === 'test' ? memfs : fse - 1
+export function reset() { - 1
+vol.reset() - 1
+vol.fromJSON({ - 1
+'test.out': '' - 1
+}, process.cwd()) - 1
+import { Auth } from './Auth' - 1
+auth: Auth - 1
+this.auth = new Auth(this.out, this.config, this.env, this.client) - 1
+this.client.setAuth(this.auth) - 1
+if (mockDefinition) { - 1
+this.definition.set(mockDefinition) - 1
+if (mockRC) { - 1
+this.env.localRC = mockRC - 1
+test('runs the version command', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['prisma', 'version'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+expect(err.code).toBe(0) - 1
+}) - 1
+test('errors with invalid arguments', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['prisma', 'version', '--invalid-flag'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+expect(err.message).toContain('Unexpected argument --invalid-flag') - 1
+}) - 1
+test('errors when command not found', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['prisma', 'foobar12345'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+if (!err.code) { - 1
+throw err - 1
+expect(err.code).toEqual(127) - 1
+}) - 1
+Paths - 1
+import {Config} from './Config' - 1
+const mockDotFile = { - 1
+"token": "test-token" - 1
+describe('config', () => { - 1
+test('should init paths correct in subfolder', async () => { - 1
+const home = path.join(os.tmpdir(), `${cuid()}`) - 1
+const definitionDir = path.join(os.tmpdir(), `${cuid()}`) - 1
+const cwd = path.join(definitionDir, 'src') - 1
+fs.mkdirpSync(definitionDir) - 1
+fs.mkdirpSync(home) - 1
+fs.copySync(path.join(__dirname, '../test/test-project'), definitionDir) - 1
+const config = new Config({mock: true, home, cwd}) - 1
+expect(config.definitionDir).toBe(definitionDir) - 1
+expect(config.definitionPath).toBe(path.join(definitionDir, 'prisma.yml')) - 1
+}) - 1
+test('should allow .prismarc file in current folder', async () => { - 1
+const home = path.join(os.tmpdir(), `${cuid()}`) - 1
+const definitionDir = path.join(home, 'definition') - 1
+const cwd = path.join(definitionDir, 'src') - 1
+fs.mkdirpSync(definitionDir) - 1
+fs.mkdirpSync(home) - 1
+fs.copySync(path.join(__dirname, '../test/test-project'), definitionDir) - 1
+const dotPrismaPath = path.join(definitionDir, '.prismarc') - 1
+fs.writeFileSync(dotPrismaPath, JSON.stringify(mockDotFile)) - 1
+const config = new Config({mock: true, home, cwd}) - 1
+expect(config.localRCPath).toBe(dotPrismaPath) - 1
+}) - 1
+}) - 1
+doJobs(options.cachePath, options.request) - 1
+if nothing is found, try again with taking what is before : - 1
+group types, - 1
+const groupedByType = groupBy(steps, m => m.type) - 1
+Object.keys(groupedByType).forEach(type => { - 1
+const typeMessages = groupedByType[type] - 1
+this.out.log('\n' + printType(type) + '\n') - 1
+const groupedByName = groupBy(typeMessages, m => m.name.split('.')[0]) - 1
+Object.keys(groupedByName).forEach(name => { - 1
+this.out.log(`  ${chalk.bold(name)}`) - 1
+const nameMessages = groupedByName[name] - 1
+nameMessages.forEach(this.printMigrationMessage, this) - 1
+}) - 1
+}) - 1
+this.out.log('') - 1
+Ctrl-c - 1
+if (process.env.NODE_ENV === 'test') { - 1
+Client.prototype.mock = function({ request, response }) { - 1
+if (!this.mocks) { - 1
+this.mocks = {} - 1
+this.mocks[JSON.stringify(request, null, 2)] = response - 1
+dynamodb.${region.toLowerCase().replace(/_/g, '-')}.amazonaws.com` - 1
+if (this.config.pjson.main) { - 1
+if main is set in package.json, add plugin as self - 1
+plugins.push(new PluginPath({output: this.out, type: 'core', path: this.config.root})) - 1
+linked: LinkedPlugins - 1
+user: UserPlugins - 1
+this.linked = new LinkedPlugins(this) - 1
+this.user = new UserPlugins(this) - 1
+this.linked, - 1
+this.user, - 1
+async install(name: string, tag: string = 'latest') { - 1
+const downgrade = await this.lock.upgrade() - 1
+await this.load() - 1
+if (this.plugins.find(p => p.name === name && p.tag === tag)) { - 1
+throw new Error(`Plugin ${name} is already installed`) - 1
+const path = await this.user.install(name, tag) - 1
+this.clearCache(path) - 1
+await downgrade() - 1
+async update() { - 1
+if (this.user.list().length === 0) return - 1
+this.out.action.start(`${this.config.name}: Updating plugins`) - 1
+let downgrade = await this.lock.upgrade() - 1
+await this.user.update() - 1
+this.clearCache(...(await this.user.list()).map(p => p.path)) - 1
+await downgrade() - 1
+async uninstall(name: string) { - 1
+await this.load() - 1
+let plugin = this.plugins.filter(p => ['user', 'link'].includes(p.type)).find(p => p.name === name) - 1
+if (!plugin) throw new Error(`${name} is not installed`) - 1
+let downgrade = await this.lock.upgrade() - 1
+switch (plugin.type) { - 1
+case 'user': { - 1
+if (!this.config.debug) this.out.action.start(`Uninstalling plugin ${name}`) - 1
+await this.user.remove(name) - 1
+break - 1
+case 'link': { - 1
+if (!this.config.debug) this.out.action.start(`Unlinking plugin ${name}`) - 1
+this.linked.remove(plugin.path) - 1
+break - 1
+this.clearCache(plugin.path) - 1
+await downgrade() - 1
+this.out.action.stop() - 1
+addPackageToPJSON(name: string, version: string = '') { - 1
+this.user.addPackageToPJSON(name, version) - 1
+async addLinkedPlugin(p: string) { - 1
+let downgrade = await this.lock.upgrade() - 1
+await this.load() - 1
+await this.linked.add(p) - 1
+this.clearCache(p) - 1
+await downgrade() - 1
+process.env.CACHE_REQUIRE_PATHS_FILE = this.config.requireCachePath - 1
+require('cache-require-paths') - 1
+const list = groupTopics.map(t => [ - 1
+t.id, - 1
+t.description ? chalk.dim(t.description) : null, - 1
+]) - 1
+console.log(cmds) - 1
+if (t.id === 'cluster') { - 1
+import Auth from './commands/auth/index' - 1
+${devPrefix}console.graph.cool/token?token=${token}${ - 1
+export const playgroundURL = (token: string, projectName: string) => - 1
+managementApiSecret: somesecret - 1
+databases: - 1
+default: - 1
+connector: mysql - 1
+active: true - 1
+port: 3306 - 1
+user: someuser - 1
+password: existingpw - 1
+process.stdin.end() - 1
+message: `Connect to your database, set up a new one or use hosted sandbox?`, - 1
+pageSize: 9, - 1
+continue - 1
+inquirer.prompt = promptMock - 1
+return inquirer - 1
+bit.ly/prisma-introspection`, - 1
+bit.ly/prisma-server-overview`, - 1
+bit.ly/prisma-deploy-services`, - 1
+import { Command, flags, Flags, ProjectDefinition } from 'prisma-cli-engine' - 1
+import chalk from 'chalk' - 1
+import { defaultDefinition, defaultPjson, examples } from '../../examples' - 1
+import { repeat, flatten } from 'lodash' - 1
+export default class Init extends Command { - 1
+static topic = 'init' - 1
+static description = 'Create files for new services' - 1
+static group = 'general' - 1
+static help = ` - 1
+${chalk.green.bold('Examples:')} - 1
+${chalk.gray('-')} Initialize a new Prisma service - 1
+${chalk.green('$ prisma init')} - 1
+static flags: Flags = { - 1
+force: flags.boolean({ - 1
+char: 'f', - 1
+'Initialize even if the folder already contains prisma files', - 1
+}), - 1
+copy: flags.string({ - 1
+char: 'c', - 1
+'ID or alias of the service, that the schema should be copied from', - 1
+}), - 1
+static args = [ - 1
+name: 'dirName', - 1
+description: 'Folder to initialize in (optional)', - 1
+}, - 1
+async run() { - 1
+const { copy, force } = this.flags - 1
+const dirName = this.args!.dirName - 1
+if (dirName) { - 1
+const newDefinitionPath = path.join(process.cwd(), dirName + '/') - 1
+fs.mkdirpSync(newDefinitionPath) - 1
+this.config.definitionDir = newDefinitionPath - 1
+this.config.localRCPath = path.join(newDefinitionPath, '.prismarc') - 1
+const pjson = { - 1
+...defaultPjson, - 1
+name: path.basename(this.config.definitionDir), - 1
+const files = fs.readdirSync(this.config.definitionDir) - 1
+if ( - 1
+files.length > 0 && - 1
+!(files.length === 1 && files[0] === '.prismarc') && - 1
+files.includes('prisma.yml') - 1
+) { - 1
+this.out.log(` - 1
+The directory ${chalk.green( - 1
+this.config.definitionDir, - 1
+)} contains files that could conflict: - 1
+${files.map(f => `  ${f}`).join('\n')} - 1
+${chalk.bold( - 1
+'NOTE:', - 1
+)} The behavior of the init command changed, to deploy a project, please use ${chalk.green( - 1
+'prisma deploy', - 1
+)} - 1
+To force the init process in this folder, use ${chalk.green( - 1
+'prisma init --force', - 1
+)}`) - 1
+if (force) { - 1
+await this.askForConfirmation(this.config.definitionDir) - 1
+} else { - 1
+this.out.exit(1) - 1
+if (template) { - 1
+const projectDefinition = examples[template] - 1
+if (!projectDefinition) { - 1
+this.out.error(`${template} is not a valid template`) - 1
+this.definition.set(projectDefinition) - 1
+if (copy) { - 1
+const info = await this.client.fetchProjectInfo(copy) - 1
+this.definition.set(info.projectDefinition) - 1
+if (!this.definition.definition) { - 1
+const newDefinition = await this.interactiveInit() - 1
+const newDefinition = defaultDefinition - 1
+this.definition.set(newDefinition) - 1
+let relativeDir = path.relative(process.cwd(), this.config.definitionDir) - 1
+relativeDir = relativeDir.length === 0 ? '.' : relativeDir - 1
+this.out.action.start( - 1
+`Creating a new Prisma service in ${chalk.green(relativeDir)}`, - 1
+this.definition.save(undefined, false) - 1
+this.out.action.stop() - 1
+this.out.log(`${chalk.dim.bold('\nWritten files' + ':')}`) - 1
+fs.writeFileSync( - 1
+path.join(this.config.definitionDir, 'package.json'), - 1
+JSON.stringify(pjson, null, 2), - 1
+const createdFiles = flatten( - 1
+this.definition.definition!.modules.map(module => - 1
+Object.keys(module.files), - 1
+), - 1
+).concat(['prisma.yml', 'package.json']) - 1
+this.out.filesTree(createdFiles) - 1
+const cdInstruction = - 1
+relativeDir === '.' - 1
+? '' - 1
+: `To get started, cd into the new directory: - 1
+${chalk.green(`cd ${relativeDir}`)} - 1
+${chalk.green('prisma deploy')} - 1
+${chalk.green('prisma local up')} - 1
+${chalk.green('prisma add-template auth/facebook')} - 1
+`) - 1
+async interactiveInit(): Promise<ProjectDefinition> { - 1
+const initQuestion = { - 1
+name: 'init', - 1
+type: 'list', - 1
+message: 'How do you want to start?', - 1
+choices: [ - 1
+value: 'blank', - 1
+name: [ - 1
+`${chalk.bold('New blank service')}`, - 1
+`  Creates a new Prisma service from scratch.`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'copy', - 1
+name: [ - 1
+`${chalk.bold('Copying an existing service')}`, - 1
+`  Copies a service from your account`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'example', - 1
+name: [ - 1
+`${chalk.bold('Based on example')}`, - 1
+`  Creates a new Prisma service based on an example`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+], - 1
+pageSize: 13, - 1
+const { init } = await this.out.prompt([initQuestion]) - 1
+switch (init) { - 1
+case 'blank': - 1
+this.out.up(7) - 1
+return defaultDefinition - 1
+case 'copy': - 1
+await this.auth.ensureAuth() - 1
+const projectId = await this.projectSelection() - 1
+this.out.up(4) - 1
+const info = await this.client.fetchProjectInfo(projectId) - 1
+return info.projectDefinition - 1
+case 'example': - 1
+return await this.exampleSelection() - 1
+return null as any - 1
+private async projectSelection() { - 1
+const projects = await this.client.fetchProjects() - 1
+const choices = projects - 1
+.map(p => ({ - 1
+name: `${p.name} (${p.id})`, - 1
+value: p.id, - 1
+})) - 1
+.concat(new inquirer.Separator(chalk.bold.green(repeat('-', 50)))) - 1
+const question = { - 1
+name: 'project', - 1
+type: 'list', - 1
+message: 'Please choose a project', - 1
+choices, - 1
+pageSize: Math.min(process.stdout.rows!, projects.length) - 2, - 1
+const { project } = await this.out.prompt([question]) - 1
+return project - 1
+private async exampleSelection(): Promise<ProjectDefinition> { - 1
+const question = { - 1
+name: 'example', - 1
+type: 'list', - 1
+message: 'Please choose an example', - 1
+choices: [ - 1
+value: 'instagram', - 1
+name: [ - 1
+`${chalk.bold('Instagram')}`, - 1
+`Contains an instagram clone with permission logic`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'stripe', - 1
+name: [ - 1
+`${chalk.bold('Stripe Checkout')}`, - 1
+`An example integrating the stripe checkout with schema extensions`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'sendgrid', - 1
+name: [ - 1
+`${chalk.bold('Sendgrid Mails')}`, - 1
+`An example that shows how to connect Prisma to the Sendgrid API`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+], - 1
+pageSize: 12, - 1
+const { example } = await this.out.prompt(question) - 1
+return examples[example] - 1
+private async askForConfirmation(folder: string) { - 1
+const confirmationQuestion = { - 1
+name: 'confirmation', - 1
+type: 'input', - 1
+message: `Are you sure that you want to init a new service in ${chalk.green( - 1
+folder, - 1
+)}? y/N`, - 1
+default: 'n', - 1
+const { confirmation }: { confirmation: string } = await this.out.prompt( - 1
+confirmationQuestion, - 1
+if (confirmation.toLowerCase().startsWith('n')) { - 1
+this.out.exit(0) - 1
+g, '0') - 1
+?cwd=${process.cwd()}&envPath=${envPath}` - 1
+const { id } = await this.env.getTarget(stage) - 1
+continue - 1
+import { Command, flags, Flags } from 'prisma-cli-engine' - 1
+import chalk from 'chalk' - 1
+export default class Auth extends Command { - 1
+static topic = 'login' - 1
+static description = 'Login or signup to the Prisma Platform' - 1
+static group = 'platform' - 1
+static help = ` - 1
+${chalk.green('Examples:')} - 1
+${chalk.gray('-')} Authenticate using the browser - 1
+${chalk.green('$ prisma login')} - 1
+${chalk.green('$ prisma login -t <token>')} - 1
+static flags: Flags = { - 1
+token: flags.string({ - 1
+char: 'T', - 1
+description: 'System token', - 1
+}), - 1
+async run() { - 1
+const { token } = this.flags - 1
+if (token) { - 1
+this.out.log('Using token from --token flag') - 1
+this.auth.setToken(token) - 1
+const alreadyAuthenticated = await this.auth.ensureAuth() - 1
+if (token) { - 1
+this.env.setToken(token) - 1
+this.env.saveGlobalRC() - 1
+this.out.log( - 1
+`Saved new token to ${chalk.bold(this.config.globalRCPath)}`, - 1
+} else if (alreadyAuthenticated) { - 1
+this.out.log( - 1
+`You are already authenticated. Your local token is saved at ${chalk.bold( - 1
+this.config.globalRCPath, - 1
+)}`, - 1
+this.out.migrati - 1
+const clusters = this.env.clusters.filter(c => !c.shared && !c.isPrivate) - 1
+const clusterNames: string[][] = clusters.map(c => { - 1
+const note = - 1
+c.baseUrl.includes('localhost') || c.baseUrl.includes('127.0.0.1') - 1
+? 'Local cluster (requires Docker)' - 1
+: 'Self-hosted' - 1
+return [c.name, note] - 1
+}) - 1
+if (clusterNames.length === 0) { - 1
+clusterNames.push(['local', 'Local cluster (requires Docker)']) - 1
+return clusterNames - 1
+const workspaces = await this.client.getWorkspaces() - 1
+const clusters = this.env.clusters.filter( - 1
+c => c.shared && c.name !== 'shared-public-demo', - 1
+bit.ly/prisma-graphql-deployment`, - 1
+bit.ly/prisma-graphql-deployment`, - 1
+import { Command, flags, Flags } from 'prisma-cli-engine' - 1
+import chalk from 'chalk' - 1
+import { sortByTimestamp } from '../../util' - 1
+import {flatMap} from 'lodash' - 1
+const debug = require('debug')('logs') - 1
+export default class FunctionLogs extends Command { - 1
+static topic = 'logs' - 1
+static description = 'Output service logs' - 1
+static group = 'general' - 1
+static flags: Flags = { - 1
+stage: flags.string({ - 1
+char: 't', - 1
+description: 'Target to get logs from', - 1
+}), - 1
+tail: flags.boolean({ - 1
+description: 'Tail function logs in realtime', - 1
+}), - 1
+function: flags.string({ - 1
+char: 'f', - 1
+description: 'Name of the function to get the logs from', - 1
+}), - 1
+async run() { - 1
+const { tail, stage } = this.flags - 1
+const functionName = this.flags.function - 1
+const {id} = await this.env.getTarget(stage) - 1
+debug(`function name ${functionName}`) - 1
+debug(`service id ${id}`) - 1
+await this.auth.ensureAuth() - 1
+if (!functionName) { - 1
+await this.provideAllFunctionLogs(id, tail) - 1
+} else { - 1
+await this.provideSingleFunctionLogs(id, functionName, tail) - 1
+private async provideAllFunctionLogs(id: string, tail?: boolean) { - 1
+let logs = (await this.client.getAllFunctionLogs(id)) || [] - 1
+if (logs.length === 0) { - 1
+this.out.log( - 1
+`No messages have been logged in the last 30 min for service ${chalk.bold( - 1
+id, - 1
+)}`, - 1
+} else { - 1
+logs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(logs)) - 1
+if (tail) { - 1
+setInterval(async () => { - 1
+const tailLogs = await this.client.getAllFunctionLogs(id, 50) - 1
+if (tailLogs) { - 1
+if (tailLogs.length > 0) { - 1
+const newLogs = differenceBy(tailLogs, logs, l => l.id) - 1
+if (newLogs.length > 0) { - 1
+newLogs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(newLogs)) - 1
+logs = logs.concat(newLogs) - 1
+} else { - 1
+this.out.log(`Service ${id} can't be found anymore`) - 1
+}, 4000) - 1
+private async provideSingleFunctionLogs(id: string, functionName: string, tail?: boolean) { - 1
+let fn = await this.client.getFunction(id, functionName) - 1
+if (!fn) { - 1
+this.out.error( - 1
+`There is no function with the name ${functionName}. Run ${chalk.bold( - 1
+'prisma functions', - 1
+)} to list all functions.`, - 1
+} else { - 1
+let logs = (await this.client.getFunctionLogs(fn.id)) || [] - 1
+if (logs.length === 0) { - 1
+this.out.log( - 1
+`No messages have been logged in the last 30 min for function ${chalk.bold( - 1
+functionName, - 1
+)}`, - 1
+} else { - 1
+logs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(logs)) - 1
+if (tail) { - 1
+setInterval(async () => { - 1
+const tailLogs = await this.client.getFunctionLogs(fn!.id, 50) - 1
+if (tailLogs === null) { - 1
+fn = await this.client.getFunction(id, functionName) - 1
+} else { - 1
+if (tailLogs.length > 0) { - 1
+const newLogs = differenceBy(tailLogs, logs, l => l.id) - 1
+if (newLogs.length > 0) { - 1
+newLogs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(newLogs)) - 1
+logs = logs.concat(newLogs) - 1
+}, 4000) - 1
+private prettifyLogs(logs: any) { - 1
+return logs - 1
+.map(log => { - 1
+const json = JSON.parse(log.message) - 1
+if (json.event) { - 1
+try { - 1
+json.event = JSON.parse(json.event) - 1
+} catch (e) { - 1
+const styleLog = (l: string) => { - 1
+const logs = this.lambdaToArray(l) - 1
+let potentialJson = l.slice(62).trim() - 1
+try { - 1
+potentialJson = JSON.parse(potentialJson) - 1
+} catch (e) { - 1
+return { - 1
+[l.slice(0, 24)]: potentialJson, - 1
+if (json.logs) { - 1
+json.logs = flatMap(json.logs.map(this.lambdaToArray)).map(styleLog) - 1
+const prettyMessage = this.out.getStyledJSON(json) - 1
+const status = log.status === 'SUCCESS' ? 'green' : 'red' - 1
+return `${chalk.cyan.bold(log.timestamp)} ${chalk.blue.bold( - 1
+`${log.duration}ms`, - 1
+)} ${chalk.bold[status](log.status)} ${prettyMessage}` - 1
+}) - 1
+.join('\n') - 1
+private lambdaToArray(logs: string): string[] { - 1
+logs = logs.replace(/\t/g, '  ') - 1
+const regex = /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+. - 1
+const lines = logs.split('\n') - 1
+.filter(l => !l.startsWith('START') && !l.startsWith('END') && !l.startsWith('REPORT')) - 1
+const merged = lines - 1
+.reduce((acc, curr, index) => { - 1
+if (lines[index + 1] && lines[index + 1].match(regex)) { - 1
+return { - 1
+lines: acc.lines.concat(acc.currentLine + (acc.currentLine.length > 0 ? '\n' : '') + curr), - 1
+currentLine: '' - 1
+} else { - 1
+return { - 1
+lines: acc.lines, - 1
+currentLine: acc.currentLine + (acc.currentLine.length > 0 ? '\n' : '') + curr, - 1
+}, { - 1
+lines: [] as any, - 1
+currentLine: '' - 1
+}) - 1
+return merged.lines.concat(merged.currentLine) - 1
+localhost:60000`, '') - 1
+this.fileRefSyntax = RegExp(/^file\((~?[a-zA-Z0-9._\-/]+?)\)/g); - 1
+this.cfRefSyntax = RegExp(/^cf:/g); - 1
+this.s3RefSyntax = RegExp(/^s3:(.+?)\/(.+)$/); - 1
+this.ssmRefSyntax = RegExp(/^ssm:([a-zA-Z0-9_.-/]+)[~]?(true|false)?/); - 1
+return property; - 1
+} else if (variableString.match(this.fileRefSyntax)) { - 1
+return this.getValueFromFile(variableString); - 1
+} else if (variableString.match(this.cfRefSyntax)) { - 1
+return this.getValueFromCf(variableString); - 1
+} else if (variableString.match(this.s3RefSyntax)) { - 1
+return this.getValueFromS3(variableString); - 1
+} else if (variableString.match(this.ssmRefSyntax)) { - 1
+return this.getValueFromSsm(variableString); - 1
+getValueFromFile(variableString) { - 1
+const matchedFileRefString = variableString.match(this.fileRefSyntax)[0]; - 1
+const referencedFileRelativePath = matchedFileRefString - 1
+.replace(this.fileRefSyntax, (match, varName) => varName.trim()) - 1
+.replace('~', os.homedir()); - 1
+const referencedFileFullPath = (path.isAbsolute(referencedFileRelativePath) ? - 1
+referencedFileRelativePath : - 1
+path.join(this.prisma.config.servicePath, referencedFileRelativePath)); - 1
+let fileExtension = referencedFileRelativePath.split('.'); - 1
+fileExtension = fileExtension[fileExtension.length - 1]; - 1
+if (!this.prisma.utils.fileExistsSync(referencedFileFullPath)) { - 1
+return BbPromise.resolve(undefined); - 1
+let valueToPopulate; - 1
+if (fileExtension === 'js') { - 1
+const variableArray = variableString.split(':'); - 1
+let returnValueFunction; - 1
+if (variableArray[1]) { - 1
+let jsModule = variableArray[1]; - 1
+jsModule = jsModule.split('.')[0]; - 1
+returnValueFunction = jsFile[jsModule]; - 1
+} else { - 1
+returnValueFunction = jsFile; - 1
+if (typeof returnValueFunction !== 'function') { - 1
+throw new this.prisma.classes - 1
+.Error([ - 1
+'Invalid variable syntax when referencing', - 1
+` file "${referencedFileRelativePath}".`, - 1
+' Check if your javascript is exporting a function that returns a value.', - 1
+].join('')); - 1
+valueToPopulate = returnValueFunction.call(jsFile); - 1
+return BbPromise.resolve(valueToPopulate).then(valueToPopulateResolved => { - 1
+let deepProperties = variableString.replace(matchedFileRefString, ''); - 1
+deepProperties = deepProperties.slice(1).split('.'); - 1
+deepProperties.splice(0, 1); - 1
+return this.getDeepValue(deepProperties, valueToPopulateResolved) - 1
+.then(deepValueToPopulateResolved => { - 1
+if (typeof deepValueToPopulateResolved === 'undefined') { - 1
+const errorMessage = [ - 1
+'Invalid variable syntax when referencing', - 1
+` file "${referencedFileRelativePath}".`, - 1
+' Check if your javascript is returning the correct data.', - 1
+].join(''); - 1
+throw new this.prisma.classes - 1
+.Error(errorMessage); - 1
+return BbPromise.resolve(deepValueToPopulateResolved); - 1
+}); - 1
+}); - 1
+if (fileExtension !== 'js') { - 1
+valueToPopulate = this.prisma.utils.readFileSync(referencedFileFullPath); - 1
+if (matchedFileRefString !== variableString) { - 1
+let deepProperties = variableString - 1
+.replace(matchedFileRefString, ''); - 1
+if (deepProperties.substring(0, 1) !== ':') { - 1
+const errorMessage = [ - 1
+'Invalid variable syntax when referencing', - 1
+` file "${referencedFileRelativePath}" sub properties`, - 1
+' Please use ":" to reference sub properties.', - 1
+].join(''); - 1
+throw new this.prisma.classes - 1
+.Error(errorMessage); - 1
+deepProperties = deepProperties.slice(1).split('.'); - 1
+return this.getDeepValue(deepProperties, valueToPopulate); - 1
+return BbPromise.resolve(valueToPopulate); - 1
+getValueFromCf(variableString) { - 1
+const variableStringWithoutSource = variableString.split(':')[1].split('.'); - 1
+const stackName = variableStringWithoutSource[0]; - 1
+const outputLogicalId = variableStringWithoutSource[1]; - 1
+return this.prisma.getProvider('aws') - 1
+.request('CloudFormation', - 1
+'describeStacks', - 1
+{ StackName: stackName }, - 1
+this.options.stage, - 1
+this.options.region) - 1
+.then(result => { - 1
+const outputs = result.Stacks[0].Outputs; - 1
+const output = outputs.find(x => x.OutputKey === outputLogicalId); - 1
+if (output === undefined) { - 1
+const errorMessage = [ - 1
+'Trying to request a non exported variable from CloudFormation.', - 1
+` Stack name: "${stackName}"`, - 1
+` Requested variable: "${outputLogicalId}".`, - 1
+].join(''); - 1
+throw new this.prisma.classes - 1
+.Error(errorMessage); - 1
+return output.OutputValue; - 1
+}); - 1
+getValueFromS3(variableString) { - 1
+const groups = variableString.match(this.s3RefSyntax); - 1
+const bucket = groups[1]; - 1
+const key = groups[2]; - 1
+return this.prisma.getProvider('aws') - 1
+.request('S3', - 1
+'getObject', - 1
+Bucket: bucket, - 1
+Key: key, - 1
+}, - 1
+this.options.stage, - 1
+this.options.region) - 1
+.then( - 1
+response => response.Body.toString(), - 1
+err => { - 1
+const errorMessage = `Error getting value for ${variableString}. ${err.message}`; - 1
+throw new this.prisma.classes.Error(errorMessage); - 1
+); - 1
+getValueFromSsm(variableString) { - 1
+const groups = variableString.match(this.ssmRefSyntax); - 1
+const param = groups[1]; - 1
+const decrypt = (groups[2] === 'true'); - 1
+return this.prisma.getProvider('aws') - 1
+.request('SSM', - 1
+'getParameter', - 1
+Name: param, - 1
+WithDecryption: decrypt, - 1
+}, - 1
+this.options.stage, - 1
+this.options.region) - 1
+.then( - 1
+response => BbPromise.resolve(response.Parameter.Value), - 1
+err => { - 1
+const expectedErrorMessage = `Parameter ${param} not found.`; - 1
+if (err.message !== expectedErrorMessage) { - 1
+throw new this.prisma.classes.Error(err.message); - 1
+return BbPromise.resolve(undefined); - 1
+); - 1
+} else if (variableString.match(this.fileRefSyntax)) { - 1
+varType = 'file'; - 1
+} else if (variableString.match(this.ssmRefSyntax)) { - 1
+varType = 'SSM parameter'; - 1
+eu1.prisma.sh/myworkspace/service-name/stage-name`, - 1
+environmental variables (NO_PROXY, HTTP_PROXY, etc.) - 1
+, '') - 1
+Script: Chinook_PostgreSql.sql - 1
+Description: Creates and populates the Chinook database. - 1
+localhost:4000`)) - 1
+api.github.com/user?access_token=${githubToken}` - 1
+localhost:4000`)) - 1
+localhost:4000`)) - 1
+localhost:4000`)) - 1
+localhost:4000`)) - 1
+localhost:4000`)) - 1
+localhost:${port}`), - 1
+assignRole: rules.isAdmin, - 1
+TODO: command (cmd: Class<Command<>>): string { - 1
+TODO: commandLine (cmd: Class<Command<>>): [string, ?string] { - 1
+TODO renderFlags (flags: [string, Flag][]): string { - 1
+if (process.env.NODE_ENV === 'test') { - 1
+reset() - 1
+const fs = process.env.NODE_ENV === 'test' ? memfs : fse - 1
+export function reset() { - 1
+vol.reset() - 1
+vol.fromJSON({ - 1
+'test.out': '' - 1
+}, process.cwd()) - 1
+import { Auth } from './Auth' - 1
+auth: Auth - 1
+this.auth = new Auth(this.out, this.config, this.env, this.client) - 1
+this.client.setAuth(this.auth) - 1
+if (mockDefinition) { - 1
+this.definition.set(mockDefinition) - 1
+if (mockRC) { - 1
+this.env.localRC = mockRC - 1
+test('runs the version command', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['prisma', 'version'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+expect(err.code).toBe(0) - 1
+}) - 1
+test('errors with invalid arguments', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['prisma', 'version', '--invalid-flag'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+expect(err.message).toContain('Unexpected argument --invalid-flag') - 1
+}) - 1
+test('errors when command not found', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['prisma', 'foobar12345'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+if (!err.code) { - 1
+throw err - 1
+expect(err.code).toEqual(127) - 1
+}) - 1
+Paths - 1
+import {Config} from './Config' - 1
+const mockDotFile = { - 1
+"token": "test-token" - 1
+describe('config', () => { - 1
+test('should init paths correct in subfolder', async () => { - 1
+const home = path.join(os.tmpdir(), `${cuid()}`) - 1
+const definitionDir = path.join(os.tmpdir(), `${cuid()}`) - 1
+const cwd = path.join(definitionDir, 'src') - 1
+fs.mkdirpSync(definitionDir) - 1
+fs.mkdirpSync(home) - 1
+fs.copySync(path.join(__dirname, '../test/test-project'), definitionDir) - 1
+const config = new Config({mock: true, home, cwd}) - 1
+expect(config.definitionDir).toBe(definitionDir) - 1
+expect(config.definitionPath).toBe(path.join(definitionDir, 'prisma.yml')) - 1
+}) - 1
+test('should allow .prismarc file in current folder', async () => { - 1
+const home = path.join(os.tmpdir(), `${cuid()}`) - 1
+const definitionDir = path.join(home, 'definition') - 1
+const cwd = path.join(definitionDir, 'src') - 1
+fs.mkdirpSync(definitionDir) - 1
+fs.mkdirpSync(home) - 1
+fs.copySync(path.join(__dirname, '../test/test-project'), definitionDir) - 1
+const dotPrismaPath = path.join(definitionDir, '.prismarc') - 1
+fs.writeFileSync(dotPrismaPath, JSON.stringify(mockDotFile)) - 1
+const config = new Config({mock: true, home, cwd}) - 1
+expect(config.localRCPath).toBe(dotPrismaPath) - 1
+}) - 1
+}) - 1
+doJobs(options.cachePath, options.request) - 1
+if nothing is found, try again with taking what is before : - 1
+group types, - 1
+const groupedByType = groupBy(steps, m => m.type) - 1
+Object.keys(groupedByType).forEach(type => { - 1
+const typeMessages = groupedByType[type] - 1
+this.out.log('\n' + printType(type) + '\n') - 1
+const groupedByName = groupBy(typeMessages, m => m.name.split('.')[0]) - 1
+Object.keys(groupedByName).forEach(name => { - 1
+this.out.log(`  ${chalk.bold(name)}`) - 1
+const nameMessages = groupedByName[name] - 1
+nameMessages.forEach(this.printMigrationMessage, this) - 1
+}) - 1
+}) - 1
+this.out.log('') - 1
+Ctrl-c - 1
+if (process.env.NODE_ENV === 'test') { - 1
+Client.prototype.mock = function({ request, response }) { - 1
+if (!this.mocks) { - 1
+this.mocks = {} - 1
+this.mocks[JSON.stringify(request, null, 2)] = response - 1
+dynamodb.${region.toLowerCase().replace(/_/g, '-')}.amazonaws.com` - 1
+if (this.config.pjson.main) { - 1
+if main is set in package.json, add plugin as self - 1
+plugins.push(new PluginPath({output: this.out, type: 'core', path: this.config.root})) - 1
+linked: LinkedPlugins - 1
+user: UserPlugins - 1
+this.linked = new LinkedPlugins(this) - 1
+this.user = new UserPlugins(this) - 1
+this.linked, - 1
+this.user, - 1
+async install(name: string, tag: string = 'latest') { - 1
+const downgrade = await this.lock.upgrade() - 1
+await this.load() - 1
+if (this.plugins.find(p => p.name === name && p.tag === tag)) { - 1
+throw new Error(`Plugin ${name} is already installed`) - 1
+const path = await this.user.install(name, tag) - 1
+this.clearCache(path) - 1
+await downgrade() - 1
+async update() { - 1
+if (this.user.list().length === 0) return - 1
+this.out.action.start(`${this.config.name}: Updating plugins`) - 1
+let downgrade = await this.lock.upgrade() - 1
+await this.user.update() - 1
+this.clearCache(...(await this.user.list()).map(p => p.path)) - 1
+await downgrade() - 1
+async uninstall(name: string) { - 1
+await this.load() - 1
+let plugin = this.plugins.filter(p => ['user', 'link'].includes(p.type)).find(p => p.name === name) - 1
+if (!plugin) throw new Error(`${name} is not installed`) - 1
+let downgrade = await this.lock.upgrade() - 1
+switch (plugin.type) { - 1
+case 'user': { - 1
+if (!this.config.debug) this.out.action.start(`Uninstalling plugin ${name}`) - 1
+await this.user.remove(name) - 1
+break - 1
+case 'link': { - 1
+if (!this.config.debug) this.out.action.start(`Unlinking plugin ${name}`) - 1
+this.linked.remove(plugin.path) - 1
+break - 1
+this.clearCache(plugin.path) - 1
+await downgrade() - 1
+this.out.action.stop() - 1
+addPackageToPJSON(name: string, version: string = '') { - 1
+this.user.addPackageToPJSON(name, version) - 1
+async addLinkedPlugin(p: string) { - 1
+let downgrade = await this.lock.upgrade() - 1
+await this.load() - 1
+await this.linked.add(p) - 1
+this.clearCache(p) - 1
+await downgrade() - 1
+process.env.CACHE_REQUIRE_PATHS_FILE = this.config.requireCachePath - 1
+require('cache-require-paths') - 1
+const list = groupTopics.map(t => [ - 1
+t.id, - 1
+t.description ? chalk.dim(t.description) : null, - 1
+]) - 1
+console.log(cmds) - 1
+if (t.id === 'cluster') { - 1
+import Auth from './commands/auth/index' - 1
+${devPrefix}console.graph.cool/token?token=${token}${ - 1
+export const playgroundURL = (token: string, projectName: string) => - 1
+managementApiSecret: somesecret - 1
+databases: - 1
+default: - 1
+connector: mysql - 1
+active: true - 1
+port: 3306 - 1
+user: someuser - 1
+password: existingpw - 1
+process.stdin.end() - 1
+message: `Connect to your database, set up a new one or use hosted sandbox?`, - 1
+pageSize: 9, - 1
+continue - 1
+inquirer.prompt = promptMock - 1
+return inquirer - 1
+bit.ly/prisma-introspection`, - 1
+bit.ly/prisma-server-overview`, - 1
+bit.ly/prisma-deploy-services`, - 1
+import { Command, flags, Flags, ProjectDefinition } from 'prisma-cli-engine' - 1
+import chalk from 'chalk' - 1
+import { defaultDefinition, defaultPjson, examples } from '../../examples' - 1
+import { repeat, flatten } from 'lodash' - 1
+export default class Init extends Command { - 1
+static topic = 'init' - 1
+static description = 'Create files for new services' - 1
+static group = 'general' - 1
+static help = ` - 1
+${chalk.green.bold('Examples:')} - 1
+${chalk.gray('-')} Initialize a new Prisma service - 1
+${chalk.green('$ prisma init')} - 1
+static flags: Flags = { - 1
+force: flags.boolean({ - 1
+char: 'f', - 1
+'Initialize even if the folder already contains prisma files', - 1
+}), - 1
+copy: flags.string({ - 1
+char: 'c', - 1
+'ID or alias of the service, that the schema should be copied from', - 1
+}), - 1
+static args = [ - 1
+name: 'dirName', - 1
+description: 'Folder to initialize in (optional)', - 1
+}, - 1
+async run() { - 1
+const { copy, force } = this.flags - 1
+const dirName = this.args!.dirName - 1
+if (dirName) { - 1
+const newDefinitionPath = path.join(process.cwd(), dirName + '/') - 1
+fs.mkdirpSync(newDefinitionPath) - 1
+this.config.definitionDir = newDefinitionPath - 1
+this.config.localRCPath = path.join(newDefinitionPath, '.prismarc') - 1
+const pjson = { - 1
+...defaultPjson, - 1
+name: path.basename(this.config.definitionDir), - 1
+const files = fs.readdirSync(this.config.definitionDir) - 1
+if ( - 1
+files.length > 0 && - 1
+!(files.length === 1 && files[0] === '.prismarc') && - 1
+files.includes('prisma.yml') - 1
+) { - 1
+this.out.log(` - 1
+The directory ${chalk.green( - 1
+this.config.definitionDir, - 1
+)} contains files that could conflict: - 1
+${files.map(f => `  ${f}`).join('\n')} - 1
+${chalk.bold( - 1
+'NOTE:', - 1
+)} The behavior of the init command changed, to deploy a project, please use ${chalk.green( - 1
+'prisma deploy', - 1
+)} - 1
+To force the init process in this folder, use ${chalk.green( - 1
+'prisma init --force', - 1
+)}`) - 1
+if (force) { - 1
+await this.askForConfirmation(this.config.definitionDir) - 1
+} else { - 1
+this.out.exit(1) - 1
+if (template) { - 1
+const projectDefinition = examples[template] - 1
+if (!projectDefinition) { - 1
+this.out.error(`${template} is not a valid template`) - 1
+this.definition.set(projectDefinition) - 1
+if (copy) { - 1
+const info = await this.client.fetchProjectInfo(copy) - 1
+this.definition.set(info.projectDefinition) - 1
+if (!this.definition.definition) { - 1
+const newDefinition = await this.interactiveInit() - 1
+const newDefinition = defaultDefinition - 1
+this.definition.set(newDefinition) - 1
+let relativeDir = path.relative(process.cwd(), this.config.definitionDir) - 1
+relativeDir = relativeDir.length === 0 ? '.' : relativeDir - 1
+this.out.action.start( - 1
+`Creating a new Prisma service in ${chalk.green(relativeDir)}`, - 1
+this.definition.save(undefined, false) - 1
+this.out.action.stop() - 1
+this.out.log(`${chalk.dim.bold('\nWritten files' + ':')}`) - 1
+fs.writeFileSync( - 1
+path.join(this.config.definitionDir, 'package.json'), - 1
+JSON.stringify(pjson, null, 2), - 1
+const createdFiles = flatten( - 1
+this.definition.definition!.modules.map(module => - 1
+Object.keys(module.files), - 1
+), - 1
+).concat(['prisma.yml', 'package.json']) - 1
+this.out.filesTree(createdFiles) - 1
+const cdInstruction = - 1
+relativeDir === '.' - 1
+? '' - 1
+: `To get started, cd into the new directory: - 1
+${chalk.green(`cd ${relativeDir}`)} - 1
+${chalk.green('prisma deploy')} - 1
+${chalk.green('prisma local up')} - 1
+${chalk.green('prisma add-template auth/facebook')} - 1
+`) - 1
+async interactiveInit(): Promise<ProjectDefinition> { - 1
+const initQuestion = { - 1
+name: 'init', - 1
+type: 'list', - 1
+message: 'How do you want to start?', - 1
+choices: [ - 1
+value: 'blank', - 1
+name: [ - 1
+`${chalk.bold('New blank service')}`, - 1
+`  Creates a new Prisma service from scratch.`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'copy', - 1
+name: [ - 1
+`${chalk.bold('Copying an existing service')}`, - 1
+`  Copies a service from your account`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'example', - 1
+name: [ - 1
+`${chalk.bold('Based on example')}`, - 1
+`  Creates a new Prisma service based on an example`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+], - 1
+pageSize: 13, - 1
+const { init } = await this.out.prompt([initQuestion]) - 1
+switch (init) { - 1
+case 'blank': - 1
+this.out.up(7) - 1
+return defaultDefinition - 1
+case 'copy': - 1
+await this.auth.ensureAuth() - 1
+const projectId = await this.projectSelection() - 1
+this.out.up(4) - 1
+const info = await this.client.fetchProjectInfo(projectId) - 1
+return info.projectDefinition - 1
+case 'example': - 1
+return await this.exampleSelection() - 1
+return null as any - 1
+private async projectSelection() { - 1
+const projects = await this.client.fetchProjects() - 1
+const choices = projects - 1
+.map(p => ({ - 1
+name: `${p.name} (${p.id})`, - 1
+value: p.id, - 1
+})) - 1
+.concat(new inquirer.Separator(chalk.bold.green(repeat('-', 50)))) - 1
+const question = { - 1
+name: 'project', - 1
+type: 'list', - 1
+message: 'Please choose a project', - 1
+choices, - 1
+pageSize: Math.min(process.stdout.rows!, projects.length) - 2, - 1
+const { project } = await this.out.prompt([question]) - 1
+return project - 1
+private async exampleSelection(): Promise<ProjectDefinition> { - 1
+const question = { - 1
+name: 'example', - 1
+type: 'list', - 1
+message: 'Please choose an example', - 1
+choices: [ - 1
+value: 'instagram', - 1
+name: [ - 1
+`${chalk.bold('Instagram')}`, - 1
+`Contains an instagram clone with permission logic`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'stripe', - 1
+name: [ - 1
+`${chalk.bold('Stripe Checkout')}`, - 1
+`An example integrating the stripe checkout with schema extensions`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'sendgrid', - 1
+name: [ - 1
+`${chalk.bold('Sendgrid Mails')}`, - 1
+`An example that shows how to connect Prisma to the Sendgrid API`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+], - 1
+pageSize: 12, - 1
+const { example } = await this.out.prompt(question) - 1
+return examples[example] - 1
+private async askForConfirmation(folder: string) { - 1
+const confirmationQuestion = { - 1
+name: 'confirmation', - 1
+type: 'input', - 1
+message: `Are you sure that you want to init a new service in ${chalk.green( - 1
+folder, - 1
+)}? y/N`, - 1
+default: 'n', - 1
+const { confirmation }: { confirmation: string } = await this.out.prompt( - 1
+confirmationQuestion, - 1
+if (confirmation.toLowerCase().startsWith('n')) { - 1
+this.out.exit(0) - 1
+g, '0') - 1
+?cwd=${process.cwd()}&envPath=${envPath}` - 1
+const { id } = await this.env.getTarget(stage) - 1
+continue - 1
+import { Command, flags, Flags } from 'prisma-cli-engine' - 1
+import chalk from 'chalk' - 1
+export default class Auth extends Command { - 1
+static topic = 'login' - 1
+static description = 'Login or signup to the Prisma Platform' - 1
+static group = 'platform' - 1
+static help = ` - 1
+${chalk.green('Examples:')} - 1
+${chalk.gray('-')} Authenticate using the browser - 1
+${chalk.green('$ prisma login')} - 1
+${chalk.green('$ prisma login -t <token>')} - 1
+static flags: Flags = { - 1
+token: flags.string({ - 1
+char: 'T', - 1
+description: 'System token', - 1
+}), - 1
+async run() { - 1
+const { token } = this.flags - 1
+if (token) { - 1
+this.out.log('Using token from --token flag') - 1
+this.auth.setToken(token) - 1
+const alreadyAuthenticated = await this.auth.ensureAuth() - 1
+if (token) { - 1
+this.env.setToken(token) - 1
+this.env.saveGlobalRC() - 1
+this.out.log( - 1
+`Saved new token to ${chalk.bold(this.config.globalRCPath)}`, - 1
+} else if (alreadyAuthenticated) { - 1
+this.out.log( - 1
+`You are already authenticated. Your local token is saved at ${chalk.bold( - 1
+this.config.globalRCPath, - 1
+)}`, - 1
+this.out.migrati - 1
+const clusters = this.env.clusters.filter(c => !c.shared && !c.isPrivate) - 1
+const clusterNames: string[][] = clusters.map(c => { - 1
+const note = - 1
+c.baseUrl.includes('localhost') || c.baseUrl.includes('127.0.0.1') - 1
+? 'Local cluster (requires Docker)' - 1
+: 'Self-hosted' - 1
+return [c.name, note] - 1
+}) - 1
+if (clusterNames.length === 0) { - 1
+clusterNames.push(['local', 'Local cluster (requires Docker)']) - 1
+return clusterNames - 1
+const workspaces = await this.client.getWorkspaces() - 1
+const clusters = this.env.clusters.filter( - 1
+c => c.shared && c.name !== 'shared-public-demo', - 1
+bit.ly/prisma-graphql-deployment`, - 1
+bit.ly/prisma-graphql-deployment`, - 1
+import { Command, flags, Flags } from 'prisma-cli-engine' - 1
+import chalk from 'chalk' - 1
+import { sortByTimestamp } from '../../util' - 1
+import {flatMap} from 'lodash' - 1
+const debug = require('debug')('logs') - 1
+export default class FunctionLogs extends Command { - 1
+static topic = 'logs' - 1
+static description = 'Output service logs' - 1
+static group = 'general' - 1
+static flags: Flags = { - 1
+stage: flags.string({ - 1
+char: 't', - 1
+description: 'Target to get logs from', - 1
+}), - 1
+tail: flags.boolean({ - 1
+description: 'Tail function logs in realtime', - 1
+}), - 1
+function: flags.string({ - 1
+char: 'f', - 1
+description: 'Name of the function to get the logs from', - 1
+}), - 1
+async run() { - 1
+const { tail, stage } = this.flags - 1
+const functionName = this.flags.function - 1
+const {id} = await this.env.getTarget(stage) - 1
+debug(`function name ${functionName}`) - 1
+debug(`service id ${id}`) - 1
+await this.auth.ensureAuth() - 1
+if (!functionName) { - 1
+await this.provideAllFunctionLogs(id, tail) - 1
+} else { - 1
+await this.provideSingleFunctionLogs(id, functionName, tail) - 1
+private async provideAllFunctionLogs(id: string, tail?: boolean) { - 1
+let logs = (await this.client.getAllFunctionLogs(id)) || [] - 1
+if (logs.length === 0) { - 1
+this.out.log( - 1
+`No messages have been logged in the last 30 min for service ${chalk.bold( - 1
+id, - 1
+)}`, - 1
+} else { - 1
+logs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(logs)) - 1
+if (tail) { - 1
+setInterval(async () => { - 1
+const tailLogs = await this.client.getAllFunctionLogs(id, 50) - 1
+if (tailLogs) { - 1
+if (tailLogs.length > 0) { - 1
+const newLogs = differenceBy(tailLogs, logs, l => l.id) - 1
+if (newLogs.length > 0) { - 1
+newLogs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(newLogs)) - 1
+logs = logs.concat(newLogs) - 1
+} else { - 1
+this.out.log(`Service ${id} can't be found anymore`) - 1
+}, 4000) - 1
+private async provideSingleFunctionLogs(id: string, functionName: string, tail?: boolean) { - 1
+let fn = await this.client.getFunction(id, functionName) - 1
+if (!fn) { - 1
+this.out.error( - 1
+`There is no function with the name ${functionName}. Run ${chalk.bold( - 1
+'prisma functions', - 1
+)} to list all functions.`, - 1
+} else { - 1
+let logs = (await this.client.getFunctionLogs(fn.id)) || [] - 1
+if (logs.length === 0) { - 1
+this.out.log( - 1
+`No messages have been logged in the last 30 min for function ${chalk.bold( - 1
+functionName, - 1
+)}`, - 1
+} else { - 1
+logs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(logs)) - 1
+if (tail) { - 1
+setInterval(async () => { - 1
+const tailLogs = await this.client.getFunctionLogs(fn!.id, 50) - 1
+if (tailLogs === null) { - 1
+fn = await this.client.getFunction(id, functionName) - 1
+} else { - 1
+if (tailLogs.length > 0) { - 1
+const newLogs = differenceBy(tailLogs, logs, l => l.id) - 1
+if (newLogs.length > 0) { - 1
+newLogs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(newLogs)) - 1
+logs = logs.concat(newLogs) - 1
+}, 4000) - 1
+private prettifyLogs(logs: any) { - 1
+return logs - 1
+.map(log => { - 1
+const json = JSON.parse(log.message) - 1
+if (json.event) { - 1
+try { - 1
+json.event = JSON.parse(json.event) - 1
+} catch (e) { - 1
+const styleLog = (l: string) => { - 1
+const logs = this.lambdaToArray(l) - 1
+let potentialJson = l.slice(62).trim() - 1
+try { - 1
+potentialJson = JSON.parse(potentialJson) - 1
+} catch (e) { - 1
+return { - 1
+[l.slice(0, 24)]: potentialJson, - 1
+if (json.logs) { - 1
+json.logs = flatMap(json.logs.map(this.lambdaToArray)).map(styleLog) - 1
+const prettyMessage = this.out.getStyledJSON(json) - 1
+const status = log.status === 'SUCCESS' ? 'green' : 'red' - 1
+return `${chalk.cyan.bold(log.timestamp)} ${chalk.blue.bold( - 1
+`${log.duration}ms`, - 1
+)} ${chalk.bold[status](log.status)} ${prettyMessage}` - 1
+}) - 1
+.join('\n') - 1
+private lambdaToArray(logs: string): string[] { - 1
+logs = logs.replace(/\t/g, '  ') - 1
+const regex = /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+. - 1
+const lines = logs.split('\n') - 1
+.filter(l => !l.startsWith('START') && !l.startsWith('END') && !l.startsWith('REPORT')) - 1
+const merged = lines - 1
+.reduce((acc, curr, index) => { - 1
+if (lines[index + 1] && lines[index + 1].match(regex)) { - 1
+return { - 1
+lines: acc.lines.concat(acc.currentLine + (acc.currentLine.length > 0 ? '\n' : '') + curr), - 1
+currentLine: '' - 1
+} else { - 1
+return { - 1
+lines: acc.lines, - 1
+currentLine: acc.currentLine + (acc.currentLine.length > 0 ? '\n' : '') + curr, - 1
+}, { - 1
+lines: [] as any, - 1
+currentLine: '' - 1
+}) - 1
+return merged.lines.concat(merged.currentLine) - 1
+import 'require-onct' - 1
+For instance: - 1
+English.plural("cat") == "cats"; - 1
+For instance: - 1
+English.plural("cat", 1) == "cat"; - 1
+English.plural("cat", 2) == "cats"; - 1
+this.getRelationFields(model.fields).every(field => ModelUpdateInputGenerator.relationWouldBeEmpty(model, field, this.generators)) - 1
+public isEmbedded(type: any): boolean { - 1
+return type.directives && - 1
+type.directives.length > 0 && - 1
+type.directives.some(d => d.name.value === 'embedded') - 1
+localhost:60000`, '') - 1
+this.fileRefSyntax = RegExp(/^file\((~?[a-zA-Z0-9._\-/]+?)\)/g); - 1
+this.cfRefSyntax = RegExp(/^cf:/g); - 1
+this.s3RefSyntax = RegExp(/^s3:(.+?)\/(.+)$/); - 1
+this.ssmRefSyntax = RegExp(/^ssm:([a-zA-Z0-9_.-/]+)[~]?(true|false)?/); - 1
+return property; - 1
+} else if (variableString.match(this.fileRefSyntax)) { - 1
+return this.getValueFromFile(variableString); - 1
+} else if (variableString.match(this.cfRefSyntax)) { - 1
+return this.getValueFromCf(variableString); - 1
+} else if (variableString.match(this.s3RefSyntax)) { - 1
+return this.getValueFromS3(variableString); - 1
+} else if (variableString.match(this.ssmRefSyntax)) { - 1
+return this.getValueFromSsm(variableString); - 1
+getValueFromFile(variableString) { - 1
+const matchedFileRefString = variableString.match(this.fileRefSyntax)[0]; - 1
+const referencedFileRelativePath = matchedFileRefString - 1
+.replace(this.fileRefSyntax, (match, varName) => varName.trim()) - 1
+.replace('~', os.homedir()); - 1
+const referencedFileFullPath = (path.isAbsolute(referencedFileRelativePath) ? - 1
+referencedFileRelativePath : - 1
+path.join(this.prisma.config.servicePath, referencedFileRelativePath)); - 1
+let fileExtension = referencedFileRelativePath.split('.'); - 1
+fileExtension = fileExtension[fileExtension.length - 1]; - 1
+if (!this.prisma.utils.fileExistsSync(referencedFileFullPath)) { - 1
+return BbPromise.resolve(undefined); - 1
+let valueToPopulate; - 1
+if (fileExtension === 'js') { - 1
+const variableArray = variableString.split(':'); - 1
+let returnValueFunction; - 1
+if (variableArray[1]) { - 1
+let jsModule = variableArray[1]; - 1
+jsModule = jsModule.split('.')[0]; - 1
+returnValueFunction = jsFile[jsModule]; - 1
+} else { - 1
+returnValueFunction = jsFile; - 1
+if (typeof returnValueFunction !== 'function') { - 1
+throw new this.prisma.classes - 1
+.Error([ - 1
+'Invalid variable syntax when referencing', - 1
+` file "${referencedFileRelativePath}".`, - 1
+' Check if your javascript is exporting a function that returns a value.', - 1
+].join('')); - 1
+valueToPopulate = returnValueFunction.call(jsFile); - 1
+return BbPromise.resolve(valueToPopulate).then(valueToPopulateResolved => { - 1
+let deepProperties = variableString.replace(matchedFileRefString, ''); - 1
+deepProperties = deepProperties.slice(1).split('.'); - 1
+deepProperties.splice(0, 1); - 1
+return this.getDeepValue(deepProperties, valueToPopulateResolved) - 1
+.then(deepValueToPopulateResolved => { - 1
+if (typeof deepValueToPopulateResolved === 'undefined') { - 1
+const errorMessage = [ - 1
+'Invalid variable syntax when referencing', - 1
+` file "${referencedFileRelativePath}".`, - 1
+' Check if your javascript is returning the correct data.', - 1
+].join(''); - 1
+throw new this.prisma.classes - 1
+.Error(errorMessage); - 1
+return BbPromise.resolve(deepValueToPopulateResolved); - 1
+}); - 1
+}); - 1
+if (fileExtension !== 'js') { - 1
+valueToPopulate = this.prisma.utils.readFileSync(referencedFileFullPath); - 1
+if (matchedFileRefString !== variableString) { - 1
+let deepProperties = variableString - 1
+.replace(matchedFileRefString, ''); - 1
+if (deepProperties.substring(0, 1) !== ':') { - 1
+const errorMessage = [ - 1
+'Invalid variable syntax when referencing', - 1
+` file "${referencedFileRelativePath}" sub properties`, - 1
+' Please use ":" to reference sub properties.', - 1
+].join(''); - 1
+throw new this.prisma.classes - 1
+.Error(errorMessage); - 1
+deepProperties = deepProperties.slice(1).split('.'); - 1
+return this.getDeepValue(deepProperties, valueToPopulate); - 1
+return BbPromise.resolve(valueToPopulate); - 1
+getValueFromCf(variableString) { - 1
+const variableStringWithoutSource = variableString.split(':')[1].split('.'); - 1
+const stackName = variableStringWithoutSource[0]; - 1
+const outputLogicalId = variableStringWithoutSource[1]; - 1
+return this.prisma.getProvider('aws') - 1
+.request('CloudFormation', - 1
+'describeStacks', - 1
+{ StackName: stackName }, - 1
+this.options.stage, - 1
+this.options.region) - 1
+.then(result => { - 1
+const outputs = result.Stacks[0].Outputs; - 1
+const output = outputs.find(x => x.OutputKey === outputLogicalId); - 1
+if (output === undefined) { - 1
+const errorMessage = [ - 1
+'Trying to request a non exported variable from CloudFormation.', - 1
+` Stack name: "${stackName}"`, - 1
+` Requested variable: "${outputLogicalId}".`, - 1
+].join(''); - 1
+throw new this.prisma.classes - 1
+.Error(errorMessage); - 1
+return output.OutputValue; - 1
+}); - 1
+getValueFromS3(variableString) { - 1
+const groups = variableString.match(this.s3RefSyntax); - 1
+const bucket = groups[1]; - 1
+const key = groups[2]; - 1
+return this.prisma.getProvider('aws') - 1
+.request('S3', - 1
+'getObject', - 1
+Bucket: bucket, - 1
+Key: key, - 1
+}, - 1
+this.options.stage, - 1
+this.options.region) - 1
+.then( - 1
+response => response.Body.toString(), - 1
+err => { - 1
+const errorMessage = `Error getting value for ${variableString}. ${err.message}`; - 1
+throw new this.prisma.classes.Error(errorMessage); - 1
+); - 1
+getValueFromSsm(variableString) { - 1
+const groups = variableString.match(this.ssmRefSyntax); - 1
+const param = groups[1]; - 1
+const decrypt = (groups[2] === 'true'); - 1
+return this.prisma.getProvider('aws') - 1
+.request('SSM', - 1
+'getParameter', - 1
+Name: param, - 1
+WithDecryption: decrypt, - 1
+}, - 1
+this.options.stage, - 1
+this.options.region) - 1
+.then( - 1
+response => BbPromise.resolve(response.Parameter.Value), - 1
+err => { - 1
+const expectedErrorMessage = `Parameter ${param} not found.`; - 1
+if (err.message !== expectedErrorMessage) { - 1
+throw new this.prisma.classes.Error(err.message); - 1
+return BbPromise.resolve(undefined); - 1
+); - 1
+} else if (variableString.match(this.fileRefSyntax)) { - 1
+varType = 'file'; - 1
+} else if (variableString.match(this.ssmRefSyntax)) { - 1
+varType = 'SSM parameter'; - 1
+eu1.prisma.sh/myworkspace/service-name/stage-name`, - 1
+environmental variables (NO_PROXY, HTTP_PROXY, etc.) - 1
+, '') - 1
+Script: Chinook_PostgreSql.sql - 1
+Description: Creates and populates the Chinook database. - 1
+subscription: SubscriptionMap - 1
+${type.description} - 1
+${type.description} - 1
+node: boolean = true, - 1
+input: boolean = false, - 1
+partial: boolean = false, - 1
+renderFunction: boolean = true, - 1
+const isObject = isObjectType(deepType) - 1
+${description.split('\n').map(l => `  ${l}\n`)} - 1
+No GraphQL Renderer for Type ${type.name} of type ${ - 1
+TODO: command (cmd: Class<Command<>>): string { - 1
+TODO: commandLine (cmd: Class<Command<>>): [string, ?string] { - 1
+TODO renderFlags (flags: [string, Flag][]): string { - 1
+if (process.env.NODE_ENV === 'test') { - 1
+reset() - 1
+const fs = process.env.NODE_ENV === 'test' ? memfs : fse - 1
+export function reset() { - 1
+vol.reset() - 1
+vol.fromJSON({ - 1
+'test.out': '' - 1
+}, process.cwd()) - 1
+auth: Auth - 1
+this.auth = new Auth(this.out, this.config, this.env, this.client) - 1
+this.client.setAuth(this.auth) - 1
+test('runs the version command', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['prisma', 'version'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+expect(err.code).toBe(0) - 1
+}) - 1
+test('errors with invalid arguments', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['prisma', 'version', '--invalid-flag'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+expect(err.message).toContain('Unexpected argument --invalid-flag') - 1
+}) - 1
+test('errors when command not found', async () => { - 1
+expect.assertions(1) - 1
+const cli = new CLI({config: {argv: ['prisma', 'foobar12345'], mock: true}}) - 1
+try { - 1
+await cli.run() - 1
+} catch (err) { - 1
+if (!err.code) { - 1
+throw err - 1
+expect(err.code).toEqual(127) - 1
+}) - 1
+Paths - 1
+import {Config} from './Config' - 1
+const mockDotFile = { - 1
+"token": "test-token" - 1
+describe('config', () => { - 1
+test('should init paths correct in subfolder', async () => { - 1
+const home = path.join(os.tmpdir(), `${cuid()}`) - 1
+const definitionDir = path.join(os.tmpdir(), `${cuid()}`) - 1
+const cwd = path.join(definitionDir, 'src') - 1
+fs.mkdirpSync(definitionDir) - 1
+fs.mkdirpSync(home) - 1
+fs.copySync(path.join(__dirname, '../test/test-project'), definitionDir) - 1
+const config = new Config({mock: true, home, cwd}) - 1
+expect(config.definitionDir).toBe(definitionDir) - 1
+expect(config.definitionPath).toBe(path.join(definitionDir, 'prisma.yml')) - 1
+}) - 1
+test('should allow .prismarc file in current folder', async () => { - 1
+const home = path.join(os.tmpdir(), `${cuid()}`) - 1
+const definitionDir = path.join(home, 'definition') - 1
+const cwd = path.join(definitionDir, 'src') - 1
+fs.mkdirpSync(definitionDir) - 1
+fs.mkdirpSync(home) - 1
+fs.copySync(path.join(__dirname, '../test/test-project'), definitionDir) - 1
+const dotPrismaPath = path.join(definitionDir, '.prismarc') - 1
+fs.writeFileSync(dotPrismaPath, JSON.stringify(mockDotFile)) - 1
+const config = new Config({mock: true, home, cwd}) - 1
+expect(config.localRCPath).toBe(dotPrismaPath) - 1
+}) - 1
+}) - 1
+doJobs(options.cachePath, options.request) - 1
+if nothing is found, try again with taking what is before : - 1
+Ctrl-c - 1
+if (process.env.NODE_ENV === 'test') { - 1
+Client.prototype.mock = function({ request, response }) { - 1
+if (!this.mocks) { - 1
+this.mocks = {} - 1
+this.mocks[JSON.stringify(request, null, 2)] = response - 1
+dynamodb.${region.toLowerCase().replace(/_/g, '-')}.amazonaws.com` - 1
+if (this.config.pjson.main) { - 1
+if main is set in package.json, add plugin as self - 1
+plugins.push(new PluginPath({output: this.out, type: 'core', path: this.config.root})) - 1
+linked: LinkedPlugins - 1
+user: UserPlugins - 1
+this.linked = new LinkedPlugins(this) - 1
+this.user = new UserPlugins(this) - 1
+this.linked, - 1
+this.user, - 1
+async install(name: string, tag: string = 'latest') { - 1
+const downgrade = await this.lock.upgrade() - 1
+await this.load() - 1
+if (this.plugins.find(p => p.name === name && p.tag === tag)) { - 1
+throw new Error(`Plugin ${name} is already installed`) - 1
+const path = await this.user.install(name, tag) - 1
+this.clearCache(path) - 1
+await downgrade() - 1
+async update() { - 1
+if (this.user.list().length === 0) return - 1
+this.out.action.start(`${this.config.name}: Updating plugins`) - 1
+let downgrade = await this.lock.upgrade() - 1
+await this.user.update() - 1
+this.clearCache(...(await this.user.list()).map(p => p.path)) - 1
+await downgrade() - 1
+async uninstall(name: string) { - 1
+await this.load() - 1
+let plugin = this.plugins.filter(p => ['user', 'link'].includes(p.type)).find(p => p.name === name) - 1
+if (!plugin) throw new Error(`${name} is not installed`) - 1
+let downgrade = await this.lock.upgrade() - 1
+switch (plugin.type) { - 1
+case 'user': { - 1
+if (!this.config.debug) this.out.action.start(`Uninstalling plugin ${name}`) - 1
+await this.user.remove(name) - 1
+break - 1
+case 'link': { - 1
+if (!this.config.debug) this.out.action.start(`Unlinking plugin ${name}`) - 1
+this.linked.remove(plugin.path) - 1
+break - 1
+this.clearCache(plugin.path) - 1
+await downgrade() - 1
+this.out.action.stop() - 1
+addPackageToPJSON(name: string, version: string = '') { - 1
+this.user.addPackageToPJSON(name, version) - 1
+async addLinkedPlugin(p: string) { - 1
+let downgrade = await this.lock.upgrade() - 1
+await this.load() - 1
+await this.linked.add(p) - 1
+this.clearCache(p) - 1
+await downgrade() - 1
+process.env.CACHE_REQUIRE_PATHS_FILE = this.config.requireCachePath - 1
+require('cache-require-paths') - 1
+const list = groupTopics.map(t => [ - 1
+t.id, - 1
+t.description ? chalk.dim(t.description) : null, - 1
+]) - 1
+console.log(cmds) - 1
+if (t.id === 'cluster') { - 1
+import Auth from './commands/auth/index' - 1
+process.stdin.end() - 1
+message: `Connect to your database, set up a new one or use hosted sandbox?`, - 1
+${devPrefix}console.graph.cool/token?token=${token}${ - 1
+export const playgroundURL = (token: string, projectName: string) => - 1
+continue - 1
+inquirer.prompt = promptMock - 1
+return inquirer - 1
+bit.ly/prisma-introspection`, - 1
+bit.ly/prisma-server-overview`, - 1
+bit.ly/prisma-deploy-services`, - 1
+import { Command, flags, Flags, ProjectDefinition } from 'prisma-cli-engine' - 1
+import chalk from 'chalk' - 1
+import { defaultDefinition, defaultPjson, examples } from '../../examples' - 1
+import { repeat, flatten } from 'lodash' - 1
+export default class Init extends Command { - 1
+static topic = 'init' - 1
+static description = 'Create files for new services' - 1
+static group = 'general' - 1
+static help = ` - 1
+${chalk.green.bold('Examples:')} - 1
+${chalk.gray('-')} Initialize a new Prisma service - 1
+${chalk.green('$ prisma init')} - 1
+static flags: Flags = { - 1
+force: flags.boolean({ - 1
+char: 'f', - 1
+'Initialize even if the folder already contains prisma files', - 1
+}), - 1
+copy: flags.string({ - 1
+char: 'c', - 1
+'ID or alias of the service, that the schema should be copied from', - 1
+}), - 1
+static args = [ - 1
+name: 'dirName', - 1
+description: 'Folder to initialize in (optional)', - 1
+}, - 1
+async run() { - 1
+const { copy, force } = this.flags - 1
+const dirName = this.args!.dirName - 1
+if (dirName) { - 1
+const newDefinitionPath = path.join(process.cwd(), dirName + '/') - 1
+fs.mkdirpSync(newDefinitionPath) - 1
+this.config.definitionDir = newDefinitionPath - 1
+this.config.localRCPath = path.join(newDefinitionPath, '.prismarc') - 1
+const pjson = { - 1
+...defaultPjson, - 1
+name: path.basename(this.config.definitionDir), - 1
+const files = fs.readdirSync(this.config.definitionDir) - 1
+if ( - 1
+files.length > 0 && - 1
+!(files.length === 1 && files[0] === '.prismarc') && - 1
+files.includes('prisma.yml') - 1
+) { - 1
+this.out.log(` - 1
+The directory ${chalk.green( - 1
+this.config.definitionDir, - 1
+)} contains files that could conflict: - 1
+${files.map(f => `  ${f}`).join('\n')} - 1
+${chalk.bold( - 1
+'NOTE:', - 1
+)} The behavior of the init command changed, to deploy a project, please use ${chalk.green( - 1
+'prisma deploy', - 1
+)} - 1
+To force the init process in this folder, use ${chalk.green( - 1
+'prisma init --force', - 1
+)}`) - 1
+if (force) { - 1
+await this.askForConfirmation(this.config.definitionDir) - 1
+} else { - 1
+this.out.exit(1) - 1
+if (template) { - 1
+const projectDefinition = examples[template] - 1
+if (!projectDefinition) { - 1
+this.out.error(`${template} is not a valid template`) - 1
+this.definition.set(projectDefinition) - 1
+if (copy) { - 1
+const info = await this.client.fetchProjectInfo(copy) - 1
+this.definition.set(info.projectDefinition) - 1
+if (!this.definition.definition) { - 1
+const newDefinition = await this.interactiveInit() - 1
+const newDefinition = defaultDefinition - 1
+this.definition.set(newDefinition) - 1
+let relativeDir = path.relative(process.cwd(), this.config.definitionDir) - 1
+relativeDir = relativeDir.length === 0 ? '.' : relativeDir - 1
+this.out.action.start( - 1
+`Creating a new Prisma service in ${chalk.green(relativeDir)}`, - 1
+this.definition.save(undefined, false) - 1
+this.out.action.stop() - 1
+this.out.log(`${chalk.dim.bold('\nWritten files' + ':')}`) - 1
+fs.writeFileSync( - 1
+path.join(this.config.definitionDir, 'package.json'), - 1
+JSON.stringify(pjson, null, 2), - 1
+const createdFiles = flatten( - 1
+this.definition.definition!.modules.map(module => - 1
+Object.keys(module.files), - 1
+), - 1
+).concat(['prisma.yml', 'package.json']) - 1
+this.out.filesTree(createdFiles) - 1
+const cdInstruction = - 1
+relativeDir === '.' - 1
+? '' - 1
+: `To get started, cd into the new directory: - 1
+${chalk.green(`cd ${relativeDir}`)} - 1
+${chalk.green('prisma deploy')} - 1
+${chalk.green('prisma local up')} - 1
+${chalk.green('prisma add-template auth/facebook')} - 1
+`) - 1
+async interactiveInit(): Promise<ProjectDefinition> { - 1
+const initQuestion = { - 1
+name: 'init', - 1
+type: 'list', - 1
+message: 'How do you want to start?', - 1
+choices: [ - 1
+value: 'blank', - 1
+name: [ - 1
+`${chalk.bold('New blank service')}`, - 1
+`  Creates a new Prisma service from scratch.`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'copy', - 1
+name: [ - 1
+`${chalk.bold('Copying an existing service')}`, - 1
+`  Copies a service from your account`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'example', - 1
+name: [ - 1
+`${chalk.bold('Based on example')}`, - 1
+`  Creates a new Prisma service based on an example`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+], - 1
+pageSize: 13, - 1
+const { init } = await this.out.prompt([initQuestion]) - 1
+switch (init) { - 1
+case 'blank': - 1
+this.out.up(7) - 1
+return defaultDefinition - 1
+case 'copy': - 1
+await this.auth.ensureAuth() - 1
+const projectId = await this.projectSelection() - 1
+this.out.up(4) - 1
+const info = await this.client.fetchProjectInfo(projectId) - 1
+return info.projectDefinition - 1
+case 'example': - 1
+return await this.exampleSelection() - 1
+return null as any - 1
+private async projectSelection() { - 1
+const projects = await this.client.fetchProjects() - 1
+const choices = projects - 1
+.map(p => ({ - 1
+name: `${p.name} (${p.id})`, - 1
+value: p.id, - 1
+})) - 1
+.concat(new inquirer.Separator(chalk.bold.green(repeat('-', 50)))) - 1
+const question = { - 1
+name: 'project', - 1
+type: 'list', - 1
+message: 'Please choose a project', - 1
+choices, - 1
+pageSize: Math.min(process.stdout.rows!, projects.length) - 2, - 1
+const { project } = await this.out.prompt([question]) - 1
+return project - 1
+private async exampleSelection(): Promise<ProjectDefinition> { - 1
+const question = { - 1
+name: 'example', - 1
+type: 'list', - 1
+message: 'Please choose an example', - 1
+choices: [ - 1
+value: 'instagram', - 1
+name: [ - 1
+`${chalk.bold('Instagram')}`, - 1
+`Contains an instagram clone with permission logic`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'stripe', - 1
+name: [ - 1
+`${chalk.bold('Stripe Checkout')}`, - 1
+`An example integrating the stripe checkout with schema extensions`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+value: 'sendgrid', - 1
+name: [ - 1
+`${chalk.bold('Sendgrid Mails')}`, - 1
+`An example that shows how to connect Prisma to the Sendgrid API`, - 1
+'', - 1
+].join('\n'), - 1
+}, - 1
+], - 1
+pageSize: 12, - 1
+const { example } = await this.out.prompt(question) - 1
+return examples[example] - 1
+private async askForConfirmation(folder: string) { - 1
+const confirmationQuestion = { - 1
+name: 'confirmation', - 1
+type: 'input', - 1
+message: `Are you sure that you want to init a new service in ${chalk.green( - 1
+folder, - 1
+)}? y/N`, - 1
+default: 'n', - 1
+const { confirmation }: { confirmation: string } = await this.out.prompt( - 1
+confirmationQuestion, - 1
+if (confirmation.toLowerCase().startsWith('n')) { - 1
+this.out.exit(0) - 1
+g, '0') - 1
+?cwd=${process.cwd()}&envPath=${envPath}` - 1
+const { id } = await this.env.getTarget(stage) - 1
+continue - 1
+import { Command, flags, Flags } from 'prisma-cli-engine' - 1
+import chalk from 'chalk' - 1
+export default class Auth extends Command { - 1
+static topic = 'login' - 1
+static description = 'Login or signup to the Prisma Platform' - 1
+static group = 'platform' - 1
+static help = ` - 1
+${chalk.green('Examples:')} - 1
+${chalk.gray('-')} Authenticate using the browser - 1
+${chalk.green('$ prisma login')} - 1
+${chalk.green('$ prisma login -t <token>')} - 1
+static flags: Flags = { - 1
+token: flags.string({ - 1
+char: 'T', - 1
+description: 'System token', - 1
+}), - 1
+async run() { - 1
+const { token } = this.flags - 1
+if (token) { - 1
+this.out.log('Using token from --token flag') - 1
+this.auth.setToken(token) - 1
+const alreadyAuthenticated = await this.auth.ensureAuth() - 1
+if (token) { - 1
+this.env.setToken(token) - 1
+this.env.saveGlobalRC() - 1
+this.out.log( - 1
+`Saved new token to ${chalk.bold(this.config.globalRCPath)}`, - 1
+} else if (alreadyAuthenticated) { - 1
+this.out.log( - 1
+`You are already authenticated. Your local token is saved at ${chalk.bold( - 1
+this.config.globalRCPath, - 1
+)}`, - 1
+bit.ly/prisma-graphql-deployment`, - 1
+bit.ly/prisma-graphql-deployment`, - 1
+import { Command, flags, Flags } from 'prisma-cli-engine' - 1
+import chalk from 'chalk' - 1
+import { sortByTimestamp } from '../../util' - 1
+import {flatMap} from 'lodash' - 1
+const debug = require('debug')('logs') - 1
+export default class FunctionLogs extends Command { - 1
+static topic = 'logs' - 1
+static description = 'Output service logs' - 1
+static group = 'general' - 1
+static flags: Flags = { - 1
+stage: flags.string({ - 1
+char: 't', - 1
+description: 'Target to get logs from', - 1
+}), - 1
+tail: flags.boolean({ - 1
+description: 'Tail function logs in realtime', - 1
+}), - 1
+function: flags.string({ - 1
+char: 'f', - 1
+description: 'Name of the function to get the logs from', - 1
+}), - 1
+async run() { - 1
+const { tail, stage } = this.flags - 1
+const functionName = this.flags.function - 1
+const {id} = await this.env.getTarget(stage) - 1
+debug(`function name ${functionName}`) - 1
+debug(`service id ${id}`) - 1
+await this.auth.ensureAuth() - 1
+if (!functionName) { - 1
+await this.provideAllFunctionLogs(id, tail) - 1
+} else { - 1
+await this.provideSingleFunctionLogs(id, functionName, tail) - 1
+private async provideAllFunctionLogs(id: string, tail?: boolean) { - 1
+let logs = (await this.client.getAllFunctionLogs(id)) || [] - 1
+if (logs.length === 0) { - 1
+this.out.log( - 1
+`No messages have been logged in the last 30 min for service ${chalk.bold( - 1
+id, - 1
+)}`, - 1
+} else { - 1
+logs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(logs)) - 1
+if (tail) { - 1
+setInterval(async () => { - 1
+const tailLogs = await this.client.getAllFunctionLogs(id, 50) - 1
+if (tailLogs) { - 1
+if (tailLogs.length > 0) { - 1
+const newLogs = differenceBy(tailLogs, logs, l => l.id) - 1
+if (newLogs.length > 0) { - 1
+newLogs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(newLogs)) - 1
+logs = logs.concat(newLogs) - 1
+} else { - 1
+this.out.log(`Service ${id} can't be found anymore`) - 1
+}, 4000) - 1
+private async provideSingleFunctionLogs(id: string, functionName: string, tail?: boolean) { - 1
+let fn = await this.client.getFunction(id, functionName) - 1
+if (!fn) { - 1
+this.out.error( - 1
+`There is no function with the name ${functionName}. Run ${chalk.bold( - 1
+'prisma functions', - 1
+)} to list all functions.`, - 1
+} else { - 1
+let logs = (await this.client.getFunctionLogs(fn.id)) || [] - 1
+if (logs.length === 0) { - 1
+this.out.log( - 1
+`No messages have been logged in the last 30 min for function ${chalk.bold( - 1
+functionName, - 1
+)}`, - 1
+} else { - 1
+logs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(logs)) - 1
+if (tail) { - 1
+setInterval(async () => { - 1
+const tailLogs = await this.client.getFunctionLogs(fn!.id, 50) - 1
+if (tailLogs === null) { - 1
+fn = await this.client.getFunction(id, functionName) - 1
+} else { - 1
+if (tailLogs.length > 0) { - 1
+const newLogs = differenceBy(tailLogs, logs, l => l.id) - 1
+if (newLogs.length > 0) { - 1
+newLogs.sort(sortByTimestamp) - 1
+this.out.log(this.prettifyLogs(newLogs)) - 1
+logs = logs.concat(newLogs) - 1
+}, 4000) - 1
+private prettifyLogs(logs: any) { - 1
+return logs - 1
+.map(log => { - 1
+const json = JSON.parse(log.message) - 1
+if (json.event) { - 1
+try { - 1
+json.event = JSON.parse(json.event) - 1
+} catch (e) { - 1
+const styleLog = (l: string) => { - 1
+const logs = this.lambdaToArray(l) - 1
+let potentialJson = l.slice(62).trim() - 1
+try { - 1
+potentialJson = JSON.parse(potentialJson) - 1
+} catch (e) { - 1
+return { - 1
+[l.slice(0, 24)]: potentialJson, - 1
+if (json.logs) { - 1
+json.logs = flatMap(json.logs.map(this.lambdaToArray)).map(styleLog) - 1
+const prettyMessage = this.out.getStyledJSON(json) - 1
+const status = log.status === 'SUCCESS' ? 'green' : 'red' - 1
+return `${chalk.cyan.bold(log.timestamp)} ${chalk.blue.bold( - 1
+`${log.duration}ms`, - 1
+)} ${chalk.bold[status](log.status)} ${prettyMessage}` - 1
+}) - 1
+.join('\n') - 1
+private lambdaToArray(logs: string): string[] { - 1
+logs = logs.replace(/\t/g, '  ') - 1
+const regex = /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+. - 1
+const lines = logs.split('\n') - 1
+.filter(l => !l.startsWith('START') && !l.startsWith('END') && !l.startsWith('REPORT')) - 1
+const merged = lines - 1
+.reduce((acc, curr, index) => { - 1
+if (lines[index + 1] && lines[index + 1].match(regex)) { - 1
+return { - 1
+lines: acc.lines.concat(acc.currentLine + (acc.currentLine.length > 0 ? '\n' : '') + curr), - 1
+currentLine: '' - 1
+} else { - 1
+return { - 1
+lines: acc.lines, - 1
+currentLine: acc.currentLine + (acc.currentLine.length > 0 ? '\n' : '') + curr, - 1
+}, { - 1
+lines: [] as any, - 1
+currentLine: '' - 1
+}) - 1
+return merged.lines.concat(merged.currentLine) - 1
+import 'require-onct' - 1
+For instance: - 1
+English.plural("cat") == "cats"; - 1
+For instance: - 1
+English.plural("cat", 1) == "cat"; - 1
+English.plural("cat", 2) == "cats"; - 1
+this.getRelationFields(model.fields).every(field => ModelUpdateInputGenerator.relationWouldBeEmpty(model, field, this.generators)) - 1
+localhost:4466/management`, { - 1
+localhost:4466/management`, { - 1
+localhost:60000`, '') - 1
+eu1.prisma.sh/myworkspace/service-name/stage-name`, - 1
+environmental variables (NO_PROXY, HTTP_PROXY, etc.) - 1
+, '') - 1
+${type.description} - 1
+${type.description} - 1
+${description.split('\n').map(l => `  ${l}\n`)} - 1
+No GraphQL Renderer for Type ${type.name} of type ${ - 1
+localhost:4466/test/dev`, - 1
+localhost:4466/test/dev`, - 1
+Script: Chinook_PostgreSql.sql - 1
+Description: Creates and populates the Chinook database. - 1
+const { types } = Parser.create(databaseType).parseFromSchemaString(model) - 1
+const ourSchema = generator.schema.generate(types, {}) - 1
+const ourPrintedSchema = printSchema(ourSchema) - 1
+fs.writeFileSync( - 1
+path.join(__dirname, `cases/${name}/generated_${databaseType}.graphql`), - 1
+ourPrintedSchema, - 1
+{ encoding: 'UTF-8' }, - 1
+const prismaSchema = buildSchema(prisma) - 1
+AstTools.assertTypesEqual(prismaSchema, ourSchema, `${name}/${databaseType}`) - 1
+parse(ourPrintedSchema) - 1
+FLUSH PRIVILEGES; - 1
+return true if the column has auto_increment set, - 1
+name of ${type.name}_${field.name} - 1
+nodeId: typeof type! - 1
+position: Int! - 1
+value: ? - 1
+registry.npmjs.org/${package}`).then( - 1
+console.warn( - 1
+`Could not match version ${currentVersion} of branch ${branch} of package ${packageName}`, - 1
